@@ -49,6 +49,26 @@ include_once "api/db.php";
         margin: 0 9px;
         object-fit: contain;
     }
+
+    #footer .footer-link a {
+        color: #f8f9fa;
+        opacity: 0.7;
+        text-decoration: none;
+    }
+
+    #footer .footer-link a:nth-child(2) {
+        font-weight: bold;
+    }
+
+    #footer .footer-content .copyright {
+        display: inline-block;
+        vertical-align: top;
+        height: 15px;
+        font-size: 11px;
+        color: #626465;
+        text-align: left;
+        margin-top: 1px;
+    }
     </style>
 </head>
 
@@ -139,6 +159,9 @@ include_once "api/db.php";
         </div>
     </div>
 
+
+
+
     <!-- footer -->
     <footer id="footer">
         <div class="footer-link">
@@ -152,15 +175,10 @@ include_once "api/db.php";
         <div class="footer-content">
             <img src="https://dszw1qtcnsa5e.cloudfront.net/bin/live/console-community-view/assets/forum-web/pc/footer-logo.png"
                 alt="" class="logo-nexon">
-            <span class="copyright"><?=$Bottom->find(1)['bottom'];?></span>
         </div>
+        <span class="copyright"><?=$Bottom->find(1)['bottom'];?></span>
 
     </footer>
-
-
-
-    <!-- footer end -->
-
     <!-- <img src="./test.html" alt=""> -->
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
