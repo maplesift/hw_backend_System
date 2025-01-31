@@ -12,43 +12,15 @@ include_once "api/db.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+
     <script src="./js/js.js"></script>
     <style>
-    #footer {
-        padding: 20px 30px;
-        font-size: 12px;
-        background-color: #222426;
-        text-align: center;
-        box-sizing: border-box;
-    }
 
-    #footer .footer-link {
-        position: relative;
-        z-index: 100;
-        margin-bottom: 18px;
-
-    }
-
-    #footer .footer-link a:not(:last-child) {
-        position: relative;
-        padding-right: 10px;
-    }
-
-    #footer .footer-content {
-        margin-top: 20px;
-        line-height: normal;
-    }
-
-    #footer .footer-content .logo-nexon {
-        width: 73px;
-        height: 26px;
-        margin: 0 9px;
-        object-fit: contain;
-    }
     </style>
 </head>
 
@@ -142,11 +114,11 @@ include_once "api/db.php";
     <!-- footer -->
     <footer id="footer">
         <div class="footer-link">
-            <a href="">
-                使用者條款
+            <a href="https://forum.nexon.com/bluearchiveTW/main">
+                References
             </a>
             <a href="">
-                個人隱私權
+                進站總人數 :<?=$Total->find(1)['total'];?>
             </a>
         </div>
         <div class="footer-content">
@@ -156,9 +128,7 @@ include_once "api/db.php";
         </div>
 
     </footer>
-
-
-
+    <a href="#top" id="back-to-top"><i class="bi bi-arrow-90deg-up fs-5"></i></a>
     <!-- footer end -->
 
     <!-- <img src="./test.html" alt=""> -->
@@ -176,6 +146,27 @@ include_once "api/db.php";
     function login() {
         location.href = "?do=login"
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement
+                .clientHeight;
+            const scrollPercent = (scrollTop / windowHeight) * 100;
+
+            if (scrollPercent > 10) {
+                backToTop.style.opacity = '1'; // 設為完全不透明
+                backToTop.style.visibility = 'visible'; // 顯示按鈕
+                backToTop.style.transform = 'translateY(0)'; // 回到原始位置
+            } else {
+                backToTop.style.opacity = '0'; // 設為完全透明
+                backToTop.style.visibility = 'hidden'; // 隱藏按鈕
+                backToTop.style.transform = 'translateY(50px)'; // 下移回初始位置
+            }
+        });
+    });
 
 
 

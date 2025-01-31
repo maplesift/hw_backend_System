@@ -17,6 +17,7 @@ if(!isset($_SESSION['login'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
@@ -129,9 +130,26 @@ if(!isset($_SESSION['login'])){
 
 
 
-
     <!-- footer -->
-    <footer><a href=""></a></footer>
+    <footer id="footer">
+        <div class="footer-link">
+            <a href="https://forum.nexon.com/bluearchiveTW/main">
+                References
+            </a>
+            <a href="">
+                進站總人數 :<?=$Total->find(1)['total'];?>
+            </a>
+        </div>
+        <div class="footer-content">
+            <img src="https://dszw1qtcnsa5e.cloudfront.net/bin/live/console-community-view/assets/forum-web/pc/footer-logo.png"
+                alt="" class="logo-nexon">
+            <span class="copyright"><?=$Bottom->find(1)['bottom'];?></span>
+
+        </div>
+
+    </footer>
+    <!-- footer end -->
+    <a href="#top" id="back-to-top"><i class="bi bi-arrow-90deg-up fs-5"></i></a>
     <!-- <img src="./test.html" alt=""> -->
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
@@ -148,6 +166,26 @@ if(!isset($_SESSION['login'])){
         location.href = "?do=login"
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement
+                .clientHeight;
+            const scrollPercent = (scrollTop / windowHeight) * 100;
+
+            if (scrollPercent > 10) {
+                backToTop.style.opacity = '1'; // 設為完全不透明
+                backToTop.style.visibility = 'visible'; // 顯示按鈕
+                backToTop.style.transform = 'translateY(0)'; // 回到原始位置
+            } else {
+                backToTop.style.opacity = '0'; // 設為完全透明
+                backToTop.style.visibility = 'hidden'; // 隱藏按鈕
+                backToTop.style.transform = 'translateY(50px)'; // 下移回初始位置
+            }
+        });
+    });
 
 
     $(document).ready(function() {

@@ -78,7 +78,7 @@ include_once "api/db.php";
             }else{
                 include "./front/main.php";
             }
-                ?>
+            ?>
             <!-- 一行
             include(file_exists($file))?$file:"./front/main.php";
             
