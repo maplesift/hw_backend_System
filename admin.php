@@ -1,121 +1,127 @@
-﻿<?php
-include_once "api/db.php";
-if(!isset($_SESSION['login'])){
-    echo "請從登入頁登入 <a href='index.php?do=login'>管理登入</a>";
-    exit();
-}
-?>
-
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0068)?do=admin&redo=title -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>卓越科技大學校園資訊系統</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Archive TW</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- sweetalert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <script src="./js/jquery-1.9.1.min.js"></script>
+    <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+
     <script src="./js/js.js"></script>
 </head>
 
 <body>
-    <div id="cover" style="display:none; ">
-        <div id="coverr">
-            <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;"
-                onclick="cl(&#39;#cover&#39;)">X</a>
-            <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
-        </div>
-    </div>
-
-    <div id="main">
-        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
-            <div class="ti"
-                style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
-            <!--標題-->
-        </a>
-        <div id="ms">
-            <div id="lf" style="float:left;">
-                <div id="menuput" class="dbor">
-                    <!--主選單放此-->
-                    <span class="t botli">後台管理選單</span>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
-                        <div class="mainmu">
-                            網站標題管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=ad">
-                        <div class="mainmu">
-                            動態文字廣告管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=mvim">
-                        <div class="mainmu">
-                            動畫圖片管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=image">
-                        <div class="mainmu">
-                            校園映象資料管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=total">
-                        <div class="mainmu">
-                            進站總人數管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom">
-                        <div class=" mainmu">
-                            頁尾版權資料管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
-                        <div class="mainmu">
-                            最新消息資料管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=admin">
-                        <div class="mainmu">
-                            管理者帳號管理
-                        </div>
-                    </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=menu">
-                        <div class="mainmu">
-                            選單管理
-                        </div>
-                    </a>
-
-
-                </div>
-                <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-                    <span class="t">進站總人數 :<?=$Total->find(1)['total'];?>
-                    </span>
-                </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="?do=main"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item text-light">
+                        Blue Archive TW
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)"></a>
+                    </li>
+                </ul>
+                <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button>
             </div>
-            <!--  -->
+        </div>
+    </nav>
+    <!-- header -->
+    <header id="header">
+
+    </header>
+    <!-- container1 -->
+    <div class="container-fluid " id="container">
+
+        <div class="row">
+
+            <div class="col-1 bg-yellow1 "></div>
+            <!-- menu -->
+            <div class="col-3 menu">
+
+                <ul>
+                    <div class="items mt-4">
+                        <a href="?do=news">
+                            <img class="img-fluid" src="./icon/01410x100.png" alt="">
+                        </a>
+                    </div>
+                    <div class="items mt-4">
+                        <a href="?do=comic">
+                            <img class="img-fluid" src="./icon/02410x100.png" alt="">
+                        </a>
+                    </div>
+                    <div class="items mt-4">
+                        <a href="?do=introduction">
+                            <img class="img-fluid" src="./icon/未命名.png" alt="">
+                        </a>
+
+                    </div>
+                </ul>
+            </div>
+
+            <!-- include -->
             <?php
-            $do=$_GET['do']??'title';
-            $file="./backend/{$do}.php";
+            $do=$_GET['do']??'main';
+            $file="./front/{$do}.php";
             
             if(file_exists($file)){
                 include $file;
             }else{
-                include "./backend/title.php";
+                include "./front/main.php";
             }
                 ?>
 
+            <!-- include end -->
+            <div class="col-1">
 
-        </div>
-        <div style="clear:both;"></div>
-        <div
-            style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-            <span class="t" style="line-height:123px;">
-                <?=$Bottom->find(1)['bottom'];?>
-            </span>
+            </div>
         </div>
     </div>
 
+
+
+
+    <!-- footer -->
+    <footer><a href=""></a></footer>
+    <!-- <img src="./test.html" alt=""> -->
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+    function login() {
+        location.href = "?do=login"
+    }
+
+
+
+    $(document).ready(function() {
+
+
+
+    });
+    </script>
 </body>
 
 </html>

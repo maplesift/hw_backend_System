@@ -1,74 +1,80 @@
-<?php
-include_once "api/db.php";
-?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>卓越科技大學校園資訊系統</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- sweetalert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <script src="./js/jquery-1.9.1.min.js"></script>
+    <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+
     <script src="./js/js.js"></script>
 </head>
 
 <body>
-    <div id="cover" style="display:none; ">
-        <div id="coverr">
-            <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;"
-                onclick="cl(&#39;#cover&#39;)">X</a>
-            <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="?do=main"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item text-light">
+                        Blue Archive TW
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)"></a>
+                    </li>
+                </ul>
+                <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button>
+            </div>
         </div>
-    </div>
-    <div id="main">
-        <!-- href="index.php" 也可 -->
-        <a title="<?=$Title->find(['sh'=>1])['text'];?>" alt="" href="?">
-            <div class="ti"
-                style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;">
+    </nav>
+    <!-- header -->
+    <header id="header">
 
-            </div>
-            <!--標題-->
-        </a>
-        <div id="ms">
-            <div id="lf" style="float:left;">
-                <div id="menuput" class="dbor">
-                    <!--主選單放此-->
-                    <span class="t botli">主選單區</span>
-                    <?php
-                        $mains=$Menu->all(['sh'=>1,'main_id'=>0]);
-                        foreach($mains as $main){
-                            echo "<div class='mainmu cent'>";
-                            echo "<a href='{$main['href']}'>";
-                            echo $main['text'];
-                            echo "</a>";
-                            echo "<div class='mw'>";
-                            if($Menu->count(['main_id'=>$main['id']])>0){
-                                $subs=$Menu->all(['main_id'=>$main['id']]);
-                                foreach($subs as $sub){
-                                    echo "<div class='mainmu2 cent'>";
-                                    echo "<a href='{$sub['href']}'>";
-                                    echo $sub['text'];
-                                    echo "</a>";   
-                                    echo "</div>";
-                                    }
-                                }
-                            echo "</div>";
-                            echo "</div>";
-                        }
-                    
-                    ?>
+    </header>
+    <!-- container1 -->
+    <div class="container-fluid " id="container">
 
-                </div>
-                <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-                    <span class="t">
-                        進站總人數 :<?=$Total->find(1)['total'];?>
-                    </span>
-                </div>
+        <div class="row">
+
+            <div class="col-1 bg-yellow1 "></div>
+            <!-- menu -->
+            <div class="col-3 menu">
+
+                <ul>
+                    <div class="items mt-4">
+                        <a href="?do=news">
+                            <img class="img-fluid" src="./icon/01410x100.png" alt="">
+                        </a>
+                    </div>
+                    <div class="items mt-4">
+                        <a href="?do=comic">
+                            <img class="img-fluid" src="./icon/02410x100.png" alt="">
+                        </a>
+                    </div>
+                    <div class="items mt-4">
+                        <a href="?do=introduction">
+                            <img class="img-fluid" src="./icon/未命名.png" alt="">
+                        </a>
+
+                    </div>
+                </ul>
             </div>
-            <!-- 切版 main -->
+
+            <!-- include -->
             <?php
             $do=$_GET['do']??'main';
             $file="./front/{$do}.php";
@@ -79,92 +85,43 @@ include_once "api/db.php";
                 include "./front/main.php";
             }
                 ?>
-            <!-- 一行
-            include(file_exists($file))?$file:"./front/main.php";
-            
-            include "./front/{$do}.php";
-            
-            if($_GET['do']!='main'){
-                    $do=$_GET['do'];
-                }else {
-                        $do='main';
-                
-                    }
-                    $do=(isset($_GET['do']))?$_GET['do']:'main'; -->
 
-            <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
-                <!--右邊-->
-                <?php
-                if(!isset($_SESSION['login'])){
+            <!-- include end -->
+            <div class="col-1">
 
-
-                ?>
-                <button onclick="lo(&#39;?do=login&#39;)"
-                    style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;">管理登入</button>
-                <?php
-                    }else{
-                ?>
-                <button onclick="lo(&#39;admin.php&#39;)"
-                    style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;">返回管理</button>
-                <?php
-                    }
-                ?>
-                <div style="width:89%; height:480px;" class="dbor">
-                    <span class="t botli">校園映象區</span>
-                    <div class="cent" id="up" onclick="pp(1)">
-                        <!-- 上 -->
-                        <img src="./icon/up.jpg" alt="">
-                    </div>
-                    <div class="cent">
-                        <!-- img -->
-                        <?php
-                         $imgs=$Image->all(['sh'=>1]);
-                         foreach($imgs as $idx => $img){
-                            echo "<div class='im' id='ssaa{$idx}'>";
-                            echo "<img src='./upload/{$img['img']}' class='img1'> ";
-                            echo "</div>";
-                    }
-                    ?>
-                    </div>
-                    <div class="cent" id="dn" onclick="pp(2)">
-                        <!-- 下 -->
-                        <img src="./icon/dn.jpg" alt="">
-                    </div>
-
-
-
-                    <script>
-                    var nowpage = 0,
-                        num = <?=$Image->count(['sh'=>1]);?>;
-
-                    function pp(x) {
-                        var s, t;
-                        if (x == 1 && nowpage - 1 >= 0) {
-                            nowpage--;
-                        }
-                        if (x == 2 && (nowpage + 1) <= num * 1 - 3) {
-                            nowpage++;
-                        }
-                        // 所有圖片隱藏 
-                        $(".im").hide()
-                        for (s = 0; s <= 2; s++) {
-                            // 跑三次 =再來顯示3張
-                            t = s * 1 + nowpage * 1;
-                            $("#ssaa" + t).show()
-                        }
-                    }
-                    pp(1)
-                    </script>
-                </div>
             </div>
-        </div>
-        <div style="clear:both;"></div>
-        <div
-            style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-            <span class="t" style="line-height:123px;"><?=$Bottom->find(1)['bottom'];?></span>
         </div>
     </div>
 
+
+
+
+    <!-- footer -->
+    <footer><a href=""></a></footer>
+    <!-- <img src="./test.html" alt=""> -->
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+    function login() {
+        location.href = "?do=login"
+    }
+
+
+
+    $(document).ready(function() {
+
+
+
+    });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <div class="col-6 ">
-    <h2 class="title">更新消息</h2>
+    <h2 class="title">官方漫畫</h2>
     <div class="p-4 bg-yellow">
         <ul>
             <li>1</li>
