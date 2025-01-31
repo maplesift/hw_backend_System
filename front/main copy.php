@@ -21,7 +21,7 @@
         <ul class="ssaa" style="list-style-type:decimal;">
             <!-- .all substr foreach -->
             <?php
-                $all_news=$News->all(['sh'=>1]," limit 10");
+                $all_news=$News->all(['sh'=>1]," limit 5");
                 foreach ($all_news as $n) {
                     echo "<li class='mt-2'>";
                     echo mb_substr($n['text'],0,15);

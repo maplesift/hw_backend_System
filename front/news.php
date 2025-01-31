@@ -8,3 +8,18 @@
         </ul>
     </div>
 </div>
+<script>
+$(".sswww").hover(
+    function() {
+        $("#alt").html("" + $(this).children(".all").html() + "").css({
+            "top": $(this).offset().top - 25
+        })
+        $("#alt").show()
+    }
+)
+$(".sswww").mouseout(
+    function() {
+        $("#alt").hide()
+    }
+)
+</script>
