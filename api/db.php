@@ -169,12 +169,10 @@ function to($url){
 
 
 $Title=new DB('titles');
-$Ad=new DB('ads');
-$Image=new DB('images');
-$Mvim=new DB('mvims');
 $News=new DB('news');
+$Introduction=new DB('introductions');
+$Comic=new DB('comics');
 $Admin=new DB('admin');
-$Menu=new DB('menus');
 $Total=new DB('total');
 $Bottom=new DB('bottom');
 

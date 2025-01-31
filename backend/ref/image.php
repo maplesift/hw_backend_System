@@ -28,10 +28,10 @@
 
                 ?>
                 <tr>
+                    <!-- ************ -->
                     <td width="45%">
                         <img src="./upload/<?=$row['img'];?>" style="width:100px;height:68px;">
                     </td>
-                    <!-- ************ -->
 
                     <td width="7%">
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
@@ -41,7 +41,7 @@
                     </td>
                     <td>
                         <input type="button"
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>&#39;)"
+                            onclick="op('#cover','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
                             value="更換圖片">
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">

@@ -87,7 +87,7 @@ if(!isset($_SESSION['login'])){
                     </div>
                     <div class="items-back mt-2">
                         <a href="?do=introduction" class="highlight-hover del-underline">
-                            角色介紹管理
+                            學生介紹管理
                         </a>
                     </div>
                     <div class="items-back mt-2">

@@ -25,7 +25,7 @@
                 $start=($now-1)*$div;
 
 
-                // 空格很重要
+                // 空格很重要   
                 $rows=$News->all(" limit $start,$div");
 
 
