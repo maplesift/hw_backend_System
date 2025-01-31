@@ -1,5 +1,5 @@
 <div class="col-6 ">
-    <h2 class="title">更新消息管理</h2>
+    <h2 class="title">學生介紹管理</h2>
     <div class="p-4 bg-yellow">
         <ul>
             <li>1</li>

@@ -99,12 +99,12 @@ include_once "api/db.php";
 
 
                 ?>
-                <button onclick="lo(&#39;?do=login&#39;)"
+                <button onclick="lo('?do=login')"
                     style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;">管理登入</button>
                 <?php
                     }else{
                 ?>
-                <button onclick="lo(&#39;admin.php&#39;)"
+                <button onclick="lo('admin.php')"
                     style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;">返回管理</button>
                 <?php
                     }

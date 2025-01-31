@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include_once "api/db.php";
+if(!isset($_SESSION['login'])){
+    echo "請從登入頁登入 <a href='index.php?do=login'>管理登入</a>";
+    exit();
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,13 +23,23 @@
     <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
 
     <script src="./js/js.js"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
+    <div id="cover" style="display:none; ">
+        <div id="coverr">
+            <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;"
+                onclick="cl(&#39;#cover&#39;)">X</a>
+            <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
+        </div>
+    </div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="?do=main"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +55,9 @@
                         <a class="nav-link" href="javascript:void(0)"></a>
                     </li>
                 </ul>
-                <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button>
+                <button onclick="location.replace('./api/logout.php')" class="btn-login key-color-bg">
+                    登出
+                </button>
             </div>
         </div>
     </nav>
@@ -55,34 +75,48 @@
             <div class="col-3 menu">
 
                 <ul>
-                    <div class="items mt-4">
-                        <a href="?do=news">
-                            <img class="img-fluid" src="./icon/01410x100.png" alt="">
+                    <div class="items-back mt-2">
+                        <a href="?do=news" class="highlight-hover del-underline">
+                            更新消息管理
                         </a>
                     </div>
-                    <div class="items mt-4">
-                        <a href="?do=comic">
-                            <img class="img-fluid" src="./icon/02410x100.png" alt="">
+                    <div class="items-back mt-2">
+                        <a href="?do=comic" class="highlight-hover del-underline">
+                            官方漫畫管理
                         </a>
                     </div>
-                    <div class="items mt-4">
-                        <a href="?do=introduction">
-                            <img class="img-fluid" src="./icon/未命名.png" alt="">
+                    <div class="items-back mt-2">
+                        <a href="?do=introduction" class="highlight-hover del-underline">
+                            角色介紹管理
                         </a>
-
+                    </div>
+                    <div class="items-back mt-2">
+                        <a href="?do=admin" class="highlight-hover del-underline">
+                            管理者帳號管理
+                        </a>
+                    </div>
+                    <div class="items-back mt-2">
+                        <a href="?do=bottom" class="highlight-hover del-underline">
+                            頁尾版權管理
+                        </a>
+                    </div>
+                    <div class="items-back mt-2">
+                        <a href="?do=total" class="highlight-hover del-underline">
+                            進站總人數管理
+                        </a>
                     </div>
                 </ul>
             </div>
 
             <!-- include -->
             <?php
-            $do=$_GET['do']??'main';
-            $file="./front/{$do}.php";
+            $do=$_GET['do']??'admin';
+            $file="./backend/{$do}.php";
             
             if(file_exists($file)){
                 include $file;
             }else{
-                include "./front/main.php";
+                include "./backend/admin.php";
             }
                 ?>
 

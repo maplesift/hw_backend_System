@@ -139,10 +139,11 @@ button:active {
 	background: #E6E6E6;
 }
 
+/* 
 input[type=text],
 input[type=password] {
 	width: 150px;
-}
+} */
 
 input:focus,
 button:focus {
@@ -182,6 +183,13 @@ button:focus {
 }
 
 /* =========================== new */
+.text-r {
+	text-align: right;
+}
+
+.bottom-w {
+	width: 240px;
+}
 
 .bg-red {
 	background-color: red;
@@ -198,8 +206,8 @@ button:focus {
 }
 
 .bg-yellow1 {
-	/* background-color: rgb(255, 255, 185); */
-	min-height: calc(100vh - 276px);
+	background-color: rgb(255, 255, 185);
+	/* min-height: calc(100vh - 276px); */
 }
 
 
@@ -218,6 +226,14 @@ button:focus {
 	border-radius: 10%;
 	/* background-color: antiquewhite; */
 }
+
+.items-back {
+	height: 50px;
+	width: 200px;
+	border-radius: 10%;
+	/* background-color: antiquewhite; */
+}
+
 
 .title {
 	font-weight: bold;
@@ -263,6 +279,41 @@ button:focus {
 	background-repeat: no-repeat;
 	background-image: url(../icon/BAShesideOutside신규포럼헤더1920x243TW.png);
 }
+
+.del-underline {
+	text-decoration: none;
+}
+
+/* ===========================文字螢光底線============================= */
+/* 文字樣式 */
+.highlight-hover {
+	display: inline-block;
+	position: relative;
+}
+
+/* 默認狀態下沒有下劃線 */
+.highlight-hover::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 8px;
+	/* 螢光筆的粗度 */
+	background-color: rgba(0, 208, 255, 0.8);
+	/* 螢光筆顏色，這裡選用螢光黃 */
+	transition: width 0.3s ease, left 0.3s ease;
+	z-index: -100;
+}
+
+/* 滑鼠游標進入時，橫條從中間延伸出來 */
+.highlight-hover:hover::after {
+	width: 100%;
+	left: 0;
+}
+
+/* ==================================== */
+
 
 @media only screen and (max-width: 700px) {
 	.items {

@@ -1,3 +1,6 @@
+<?php
+include_once "api/db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +24,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="?do=main"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +40,18 @@
                         <a class="nav-link" href="javascript:void(0)"></a>
                     </li>
                 </ul>
-                <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button>
+                <!-- <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button> -->
+                <?php
+                if(!isset($_SESSION['login'])){
+                ?>
+                <button onclick="lo('?do=login')" class="btn-login key-color-bg">登入</button>
+                <?php
+                    }else{
+                ?>
+                <button onclick="lo('admin.php')" class="btn-login key-color-bg">管理頁面</button>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </nav>
