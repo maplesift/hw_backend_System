@@ -21,7 +21,8 @@
                 <tr>
                     <td width="23%">
                         <textarea name="text[]" style="width:300px;height:100px;"
-                            class="form-control mt-2"><?=$row['text'];?></textarea>
+                            class="form-control mt-2"><?=$row['text'];?>
+                        </textarea>
                     </td>
                     <td width=" 7%">
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>

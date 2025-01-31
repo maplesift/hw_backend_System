@@ -12,15 +12,16 @@ if(!empty($_FILES['img']['tmp_name'])){
     // ****************************************
     $_POST['img']=$_FILES['img']['name'];
     
-};
+}
+if (!empty($_FILES['logo']['tmp_name'])) {
+    move_uploaded_file($_FILES['logo']['tmp_name'], "../upload/" . $_FILES['logo']['name']);
+    $_POST['logo'] = $_FILES['logo']['name'];
+}
 // 刪除陣列中的 table value
 unset($_POST['table']);
-
 if(isset($_POST['pw2'])){
     unset($_POST['pw2']);
 }
-
-
 $$db->save($_POST);
 // 跳轉頁面
 to("../admin.php?do=$table");

@@ -1,19 +1,26 @@
 <!-- From admin.php -->
-<div class="col-7 ">
+<style>
+.int-logo {
+    width: 200px;
+    height: 200px;
+}
+</style>
+<div class="col-8 ">
     <h2 class="title">學生介紹管理</h2>
     <hr>
     <form method="post" action="./api/edit.php">
         <div class="p-4 bg-yellow">
             <table width="100%">
                 <tr class="bg-yellow1">
-                    <td width="25%">大圖</td>
-                    <td width="20%">logo</td>
-                    <td width="8%" class="">名子</td>
-                </tr>
-                <tr>
-                    <td width="8%" class="">文字介紹</td>
+                    <td width="10%">Logo</td>
+                    <td width="10%">大圖</td>
+                    <td width="8%" class="">學生姓名</td>
+                    <td width="5%" class="">文字介紹</td>
                     <td width="8%" class="">顯示</td>
                     <td width="7%" class="p-1 text-danger title">刪除</td>
+                </tr>
+                <tr>
+
 
                 </tr>
 
@@ -24,11 +31,21 @@
                     
                     ?>
                 <tr>
-                    <td width="23%">
-                        <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:115px;height:206px;">
+                    <td width="10%">
+                        <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-2" style="width:120px;height:120px;">
                     </td>
-                    <td width="20%">
-                        <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-2" style="width:115px;height:206px;">
+                    <td width="10%">
+                        <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:151px;height:201px;">
+                    </td>
+                    <td width="8%">
+                        <input type="text" name="name" value="<?=$row['name'];?>" class="form-control ">
+                    </td>
+                    <td width="5%">
+                        <textarea name="text[]" style="width:300px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
+                        </textarea>
+                    </td>
+                    <td width=" 7%">
+                        <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                     </td>
                     <td width="7%">
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger ms-2">

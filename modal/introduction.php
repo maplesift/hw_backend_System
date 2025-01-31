@@ -11,23 +11,23 @@
         padding-top: 7px;
     }
 
-    .w {
 
+    .w {
         width: 12%;
     }
     </style>
     <table>
         <tr>
+            <td class="title padding-l">Logo:</td>
+            <td><input type="file" name="logo" id="logo" class="form-control"></td>
+        </tr>
+        <tr>
             <td class="title">大圖:</td>
             <td><input type="file" name="img" id="img" class=" form-control"></td>
         </tr>
-        <tr>
-            <td class="title padding-l">logo:</td>
-            <td><input type="file" name="logo" id="logo" class="form-control"></td>
-        </tr>
         <tr class="padding-t">
             <td class="title w">學生姓名:</td>
-            <td><input type="password" name="name" id="name" class="form-control"></td>
+            <td><input type="text" name="name" id="name" class="form-control"></td>
         </tr>
 
         <div>
