@@ -13,7 +13,7 @@
     $pdo = new PDO("mysql:host=localhost;dbname=db003;charset=utf8", "root", "");
 
     // 取得所有頁面的 id 和標題
-    $sql = "SELECT id, logo , name FROM introductions";
+    $sql = "SELECT id, logo , name , `sh`=1 FROM introductions";
     $stmt = $pdo->query($sql);
     $pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
