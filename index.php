@@ -17,7 +17,7 @@ include_once "api/db.php";
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
-
+    <script src="./js/jquery-1.9.1.min.js"></script>
     <script src="./js/js.js"></script>
     <style>
 
@@ -114,7 +114,7 @@ include_once "api/db.php";
     <!-- footer -->
     <footer id="footer">
         <div class="footer-link">
-            <a href="https://forum.nexon.com/bluearchiveTW/main">
+            <a href="https://forum.nexon.com/bluearchiveTW/main" target="_blank">
                 References
             </a>
             <a href="">
@@ -147,6 +147,19 @@ include_once "api/db.php";
         location.href = "?do=login"
     }
 
+    $(".ssaa li").hover(
+        function() {
+            $("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+            $("#altt").show()
+        }
+    )
+    $(".ssaa li").mouseout(
+        function() {
+            $("#altt").hide()
+        }
+    )
+
+
     document.addEventListener('DOMContentLoaded', () => {
         const backToTop = document.getElementById('back-to-top');
 
@@ -166,14 +179,6 @@ include_once "api/db.php";
                 backToTop.style.transform = 'translateY(50px)'; // 下移回初始位置
             }
         });
-    });
-
-
-
-    $(document).ready(function() {
-
-
-
     });
     </script>
 </body>

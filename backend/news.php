@@ -20,8 +20,7 @@
                     ?>
                 <tr>
                     <td width="23%">
-                        <textarea name="text[]" style="width:300px;height:100px;"
-                            class="form-control mt-2"><?=$row['text'];?>
+                        <textarea name="text[]" style="width:400px;height:150px;" class="form-control mt-2"><?=$row['text'];?>
                         </textarea>
                     </td>
                     <td width=" 7%">

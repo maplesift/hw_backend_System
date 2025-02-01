@@ -317,6 +317,61 @@ button:focus {
 }
 
 /* ==================================== */
+/* main front */
+#altt {
+	position: absolute;
+	width: 350px;
+	min-height: 100px;
+	background-color: rgb(255, 255, 204);
+	top: 460px;
+	left: 640px;
+	z-index: 999;
+	display: none;
+	padding: 5px;
+	border: 3px double rgb(255, 153, 0);
+	background-position: initial initial;
+	background-repeat: initial initial;
+}
+
+.type-list>li:last-child {
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.type-list>li {
+	padding: 12px 0 12px 10px;
+	border-bottom: 1px solid #eaeaea;
+	box-sizing: border-box;
+}
+
+.type-list>li:hover {
+	background-color: #dbdbdb44;
+}
+
+.inner {
+	margin-bottom: 50px;
+}
+
+
+.event-banner-box .inner {
+	margin-bottom: 40px;
+}
+
+.event-banner-box li {
+	overflow: hidden;
+	float: left;
+	width: 490px;
+	height: 118px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+}
+
+.event-banner-box ul {
+	display: flex;
+	gap: 10px;
+	/* 設定圖片之間的間距 */
+}
+
+/* main front end */
 /* footer */
 #footer {
 	padding: 20px 30px;
