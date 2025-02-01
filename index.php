@@ -17,10 +17,20 @@ include_once "api/db.php";
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+
     <script src="./js/jquery-1.9.1.min.js"></script>
     <script src="./js/js.js"></script>
-    <style>
 
+    <style>
+    * {
+        font-family: "Zen Old Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
     </style>
 </head>
 

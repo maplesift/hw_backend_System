@@ -4,6 +4,9 @@
     height: 960px;
 }
 
+
+.int-logo:hover {}
+
 .int-text {
     font-size: 18px;
 }
@@ -20,9 +23,7 @@
     <style>
     </style>
     <div class="col-8 inner">
-        <h2 class="title">學生介紹
-
-        </h2>
+        <h2 class="title">學生介紹</h2>
         <hr>
         <div class="p-4 int">
             <table class="table">
@@ -30,29 +31,29 @@
                     <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
                     <tr>
                         <th width="10%">頭像</th>
-                        <th width="30%">學生姓名</th>
+                        <th width="30%">名前</th>
                     </tr>
                     <?php foreach ($pages as $page): ?>
 
                     <tr>
                         <td width="10%">
-                            <a href="?do=<?=$do;?>&id=<?= $page['id'] ?>">
-                                <img src="./upload/<?=$page['logo'];?>" class="img-fluid mt-4 "
-                                    style="width:150px;height:150px;">
-                            </a>
+                            <div class="int-logo-div">
+
+                                <a href="?do=<?=$do;?>&id=<?= $page['id'] ?>">
+                                    <img src="./upload/<?=$page['logo'];?>" class="img-fluid mt-4 int-logo"
+                                        style="width:150px;height:150px;">
+                                </a>
+                            </div>
                         </td>
                         <td width="30%" class="int-name">
                             <?=$page['name'];?>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
-        <?php endforeach; ?>
-        <?php endif; ?>
-        </table>
-        </tbody>
-
-
-
         <?php
         // 讀取選取的頁面內容
         if (isset($_GET['id'])) {
