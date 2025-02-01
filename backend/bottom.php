@@ -9,8 +9,7 @@
                     <td class="text-r">頁尾版權:</td>
                     <td>
                         <!-- <label for="email">進站總人數：</label> -->
-                        <input type="text" name="bottom" class="form-control bottom-w"
-                            value="<?=$Bottom->find(1)['bottom'];?>">
+                        <input type="text" name="bottom" class="form-control " value="<?=$Bottom->find(1)['bottom'];?>">
                     </td>
                 </tr>
             </table>

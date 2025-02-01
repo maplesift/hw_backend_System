@@ -1,5 +1,5 @@
 <div class="col-8 inner">
-    <h2 class="title">更多更新消息</h2>
+    <h2 class="title">更新消息</h2>
     <hr>
     <div class="p-4 ">
 

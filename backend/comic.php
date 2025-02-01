@@ -5,7 +5,7 @@
     <div class="p-4 bg-yellow">
         <table width="100%">
             <tr class="bg-yellow1">
-                <td width="40%" class="title">漫畫</td>
+                <td width="15%" class="title">漫畫</td>
                 <td width="7%">顯示</td>
                 <td width="7%" class=" text-danger title">刪除</td>
 
@@ -16,11 +16,11 @@
                 // *********
                 foreach($rows as $row){
                     
-                    ?>
+            ?>
             <tr>
 
-                <td width="45%">
-                    <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:115px;height:206px;">
+                <td width="15%">
+                    <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:230px;height:412px;">
                 </td>
 
                 <td width="7%">

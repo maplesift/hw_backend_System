@@ -80,7 +80,7 @@ if(!isset($_SESSION['login'])){
 
             <div class="col-1 bg-yellow1 "></div>
             <!-- menu -->
-            <div class="col-3 menu">
+            <div class="col-2 menu">
 
                 <ul>
                     <div class="items-back mt-2">

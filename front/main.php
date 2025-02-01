@@ -22,8 +22,8 @@
             ?>
         </ul>
         <!-- 為黃字框 -->
-        <div id="altt" style="">
-        </div>
+        <!-- <div id="altt" style="">
+        </div> -->
         <div class="event-banner-box">
             <div class="inner">
             </div>

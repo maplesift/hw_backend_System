@@ -8,6 +8,7 @@
 
 .int-a {
     color: black;
+    font-weight: bold;
 }
 
 .int-text {

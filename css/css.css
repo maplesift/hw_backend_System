@@ -325,8 +325,8 @@ button:focus {
 /* main front */
 #altt {
 	position: absolute;
-	width: 350px;
-	min-height: 100px;
+	width: 500px;
+	min-height: 10px;
 	background-color: rgb(255, 255, 204);
 	top: 460px;
 	left: 640px;
@@ -336,6 +336,7 @@ button:focus {
 	border: 3px double rgb(255, 153, 0);
 	background-position: initial initial;
 	background-repeat: initial initial;
+	overflow: hidden;
 }
 
 .type-list>li:last-child {
