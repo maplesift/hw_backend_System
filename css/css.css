@@ -340,6 +340,7 @@ button:focus {
 
 .type-list>li:last-child {
 	border-bottom: 1px solid #c3c3c3;
+	color: black;
 }
 
 .type-list>li {
