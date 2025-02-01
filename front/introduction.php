@@ -11,7 +11,6 @@
             <div class="p-4 int">
                 <div class="int-logo">
                     <tr>
-
                         <th width="10%">頭像</th>
                         <th width="30%">學生姓名</th>
                     </tr>
@@ -41,12 +40,13 @@
                             <?=$row['name'];?>
                         </td>
                     </tr>
-                    <tr>
-                    </tr>
+                    <!-- <tr>
+                    </tr> -->
                 </div>
                 <?php endforeach ;?>
         </tbody>
     </table>
+
 
     <!--event-banner-box  -->
     <div class="event-banner-box">
