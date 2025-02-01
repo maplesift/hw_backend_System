@@ -99,7 +99,8 @@ include_once "api/db.php";
             
             if(file_exists($file)){
                 include $file;
-            }else{
+            }
+            else{
                 include "./front/main.php";
             }
                 ?>
