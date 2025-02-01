@@ -348,6 +348,27 @@ button:focus {
 	box-sizing: border-box;
 }
 
+/* introduction */
+
+
+
+/* 
+
+.int .int-logo:last-of-type {
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.int-logo {
+	padding: 12px 0 12px 10px;
+	border-bottom: 1px solid #eaeaea;
+	box-sizing: border-box;
+} */
+.int-name {
+	align-items: center;
+	justify-content: center;
+}
+
+/* introduction */
 .type-list>li:hover {
 	background-color: #dbdbdb44;
 }

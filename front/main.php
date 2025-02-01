@@ -1,7 +1,7 @@
 <style>
 
 </style>
-<div class="col-7 inner">
+<div class="col-8 inner">
     <h2 class="title">最新文章</h2>
     <hr>
     <div class="p-4 ">

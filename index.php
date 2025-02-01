@@ -105,9 +105,9 @@ include_once "api/db.php";
                 ?>
 
             <!-- include end -->
-            <div class="col-1">
+            <!-- <div class="col-1">
 
-            </div>
+            </div> -->
         </div>
     </div>
 
