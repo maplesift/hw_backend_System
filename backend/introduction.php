@@ -16,7 +16,8 @@
                     <td width="10%">大圖</td>
                     <td width="8%" class="">學生姓名</td>
                     <td width="5%" class="">文字介紹</td>
-                    <td width="8%" class="">顯示</td>
+                    <td width="5%" class="text-primary title">顯示</td>
+                    <td width="7%"></td>
                     <td width="7%" class="p-1 text-danger title">刪除</td>
                 </tr>
                 <tr>
@@ -38,14 +39,20 @@
                         <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:151px;height:201px;">
                     </td>
                     <td width="8%">
-                        <input type="text" name="name" value="<?=$row['name'];?>" class="form-control ">
+                        <input type="text" name="name[]" value="<?=$row['name'];?>" class="form-control ">
                     </td>
                     <td width="5%">
                         <textarea name="text[]" style="width:300px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
                         </textarea>
                     </td>
-                    <td width=" 7%">
-                        <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                    <td width="5%">
+                        <input type="checkbox" name="sh[]" class="" value="<?=$row['id'];?>"
+                            <?=($row['sh']==1)?'checked':'';?>>
+                    </td>
+                    <td>
+                        <input type="button" class="btn btn-warning" width="7%"
+                            onclick="op('#cover','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
+                            value="更換圖片">
                     </td>
                     <td width="7%">
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger ms-2">
