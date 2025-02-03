@@ -19,4 +19,13 @@ if (isset($_FILES['img']['tmp_name'])) {
     $$db->save($row);
 }
 
-to("../admin.php?do=$table");
+if (isset($_FILES['logo']['tmp_name'])) {
+    move_uploaded_file($_FILES['logo']['tmp_name'],"../upload/".$_FILES['logo']['name']);
+
+    $row=$$db->find($_POST['id']);
+    $row['logo']=$_FILES['logo']['name'];
+    $$db->save($row);
+}
+
+
+// to("../admin.php?do=$table");

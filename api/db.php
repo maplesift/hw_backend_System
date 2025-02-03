@@ -3,7 +3,7 @@ session_start();
 
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db003";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=ブルアカ";
     protected $pdo;
     protected $table;
 
@@ -152,7 +152,7 @@ class DB{
 }
 
 function q($sql){
-    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db03",'root','');
+    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=ブルアカ",'root','');
     // echo $sql;
     return $pdo->query($sql)->fetchAll();
 }
@@ -178,7 +178,7 @@ $Bottom=new DB('bottom');
 
 
 if(!isset($_SESSION['total'])){
-    echo "hi ";
+    // echo "hi ";
     $_SESSION['total']=1;
     $total=$Total->find(1);
     $total['total']++;

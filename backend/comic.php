@@ -1,4 +1,7 @@
 <!-- From admin.php -->
+<style>
+
+</style>
 <div class="col-6 ">
     <h2 class="title">漫畫管理</h2>
     <hr>
@@ -8,7 +11,7 @@
                 <td width="15%" class="title">漫畫</td>
                 <td width="7%">顯示</td>
                 <td width="7%" class=" text-danger title">刪除</td>
-
+                <td width="7%"></td>
             </tr>
 
             <?php
@@ -28,6 +31,11 @@
                 </td>
                 <td width="7%">
                     <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger">
+                </td>
+                <td>
+                    <input type="button" class="btn btn-warning"
+                        onclick="op('#cover','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
+                        value="更換圖片">
                 </td>
                 <input type="hidden" name="id[]" value="<?=$row['id'];?>">
             </tr>
