@@ -126,12 +126,12 @@ if(!isset($_SESSION['login'])){
             }else{
                 include "./backend/admin.php";
             }
-                ?>
+            ?>
 
             <!-- include end -->
-            <div class="col-1">
+            <!-- <div class="col-1">
 
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -153,7 +153,6 @@ if(!isset($_SESSION['login'])){
             <span class="copyright"><?=$Bottom->find(1)['bottom'];?></span>
 
         </div>
-
     </footer>
     <!-- footer end -->
     <a href="#top" id="back-to-top"><i class="bi bi-arrow-90deg-up fs-5"></i></a>
