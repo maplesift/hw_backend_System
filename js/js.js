@@ -22,6 +22,8 @@ function op(x, y, url) {
 		$(y).fadeIn()
 	if (y && url)
 		$(y).load(url)
+
+	$("#cover").fadeIn()
 }
 function cl(x) {
 	$(x).fadeOut();

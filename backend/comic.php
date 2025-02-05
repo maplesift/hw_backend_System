@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <input type="button" class="btn btn-warning"
-                        onclick="op('#cover','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
+                        onclick="op('#modal','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
                         value="更換圖片">
                 </td>
                 <td width="7%">
@@ -49,7 +49,7 @@
                 <td width="200px">
                     <!-- onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do?>&#39;)" -->
                     <!-- include to admin.php -->
-                    <input type="button" onclick="op('#cover','#cvr','./modal/<?=$do;?>.php?table=<?=$do?>')"
+                    <input type="button" onclick="op('#modal','#cvr','./modal/<?=$do;?>.php?table=<?=$do?>')"
                         value="新增漫畫" class="btn btn-success">
                 </td>
                 <td class="cent">

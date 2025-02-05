@@ -6,7 +6,6 @@ if(isset($_SESSION['login'])){
 
 ?>
 
-
 <div class="col-6 ">
     <h2 class="title">管理登入區</h2>
     <div class="p-4 bg-yellow">
