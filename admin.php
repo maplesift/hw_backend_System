@@ -21,7 +21,7 @@ if(!isset($_SESSION['login'])){
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+    <link rel="icon" href="./icon/00SD.gif" sizes="32x32" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@ if(!isset($_SESSION['login'])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./icon/00SD.gif" class="img-fluid logo" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>

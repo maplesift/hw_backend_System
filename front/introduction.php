@@ -12,8 +12,16 @@
 }
 
 .int-text {
-    font-size: 18px;
+    font-size: 20px;
+    overflow: hidden;
+
 }
+
+.int-th {
+    font-size: 20px;
+}
+
+.int-img {}
     </style>
 
     <?php
@@ -24,7 +32,7 @@
                 $pages=ceil($total/$div);
                 $now=$_GET['p']??1;
                 $start=($now-1)*$div;
-
+                // $i=0;
                 // 空格很重要
                 $rows=$Introduction->all(['sh'=>1]," limit $start,$div");
 
@@ -35,22 +43,47 @@
     <div class="col-8 inner">
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
-        <h2 class="title"><a href="?do=introduction" class="int-a highlight-hover">學生介紹</a></h2>
+        <h2 class="title"><a href="?do=introduction#introduction-title" class="int-a highlight-hover"
+                id="introduction-title">學生介紹</a></h2>
         <hr>
         <div class="p-4 int">
+            <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
+            <div class="cent">
+                <?php
+                if(($now-1)>0) {
+                    $prev=$now-1;
+                    echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square'></i> </a>";
+                    
+                }
+
+                for($i=1;$i<=$pages;$i++){
+                    $size=($i==$now)?"28px":"22px";
+                    echo "<a href='?do=$do&p=$i#introduction-title' style='font-size:$size'>";
+                    // echo  $i;
+                    echo  "<span class=' bi bi-$i-square'> </span>";
+                    echo " </a>";
+                }
+                if(($now+1)<=$pages) {
+                    $next=$now+1;
+                    echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                    
+                }
+                ?>
+            </div>
+            <?php endif ;?>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th width="10%">頭像</th>
-                        <th width="30%">名前</th>
+                        <th width="10%" class="int-th">頭像</th>
+                        <th width="30%" class="int-th">名前</th>
                     </tr>
                     <?php foreach ($rows as $row): ?>
 
                     <tr>
                         <td width="10%">
+                            <!-- 動態生成logo -->
                             <div class="int-logo-div">
-
-                                <a href="?do=<?=$do;?>&id=<?= $row['id'] ?>">
+                                <a href="?do=<?=$do;?>&id=<?= $row['id']?>&p=<?=$now?>#introduction-title">
                                     <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-4 int-logo"
                                         style="width:150px;height:150px;">
                                 </a>
@@ -69,6 +102,7 @@
         // 讀取選取的頁面內容
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
+            // $i=$_GET['p'];
             // $sql = "SELECT * FROM introductions WHERE id = :id";
             // $stmt = $pdo->prepare($sql);
             // $stmt = $Introduction->all(['id'=>$id]);
@@ -78,11 +112,15 @@
             // $Introduction->all
             // $stmt->execute([':id' => $id]);
             // $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+          
             if ($stmt) {
-                echo "<h2 class='title'><a href='?do=$do' class='int-a highlight-hover'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2><hr>";
+                // 動態生成title
+                echo "<h2 class='title'><a href='?do=$do&p=$now#introduction-title' class='int-a highlight-hover' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2><hr>";
+                // 動態生成 img
                 echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'><hr>";
-            echo "<pre><div class='int-text'>{$stmt['text']}</div></pre>";
+                echo "<pre><div class='int-text'>{$stmt['text']}</div></pre>";
+                // 底下回上一頁
+                echo "<a href='?do=$do&p=$now#introduction-title'><img class='img-fluid' src='./icon/introduction.png'> </a>";
             } else {
             echo "<p>找不到此頁面。</p>";
             }
@@ -93,20 +131,19 @@
             <?php
                 if(($now-1)>0) {
                     $prev=$now-1;
-                    echo "<a href='?do=$do&p=$prev'> <i class='bi bi-arrow-left-square'></i> </a>";
-                    
+                    echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square'></i> </a>";
                 }
 
                 for($i=1;$i<=$pages;$i++){
-                    $size=($i==$now)?"24px":"16px";
-                    echo "<a href='?do=$do&p=$i' style='font-size:$size'>";
+                    $size=($i==$now)?"28px":"22px";
+                    echo "<a href='?do=$do&p=$i#introduction-title' style='font-size:$size'>";
                     // echo  $i;
                     echo  "<span class=' bi bi-$i-square'> </span>";
-                    echo " </a>";
+                    echo "<a href='?do=$do#introduction-title'>  </a>";
                 }
                 if(($now+1)<=$pages) {
                     $next=$now+1;
-                    echo "<a href='?do=$do&p=$next'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                    echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
                     
                 }
                 ?>

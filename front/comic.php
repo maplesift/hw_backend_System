@@ -1,11 +1,13 @@
-<div class="col-7 inner">
-    <h2 class="title">官方漫畫</h2>
+<style></style>
+
+<div class="col-8 inner">
+    <h2 class="title" id="comic-title">官方漫畫</h2>
     <hr>
     <div class="p-4 ">
         <?php
 
                 // 分頁
-                $div=2;
+                $div=1;
                 $total=$Comic->count();
                 $pages=ceil($total/$div);
                 $now=$_GET['p']??1;
@@ -13,14 +15,35 @@
 
                 // 空格很重要
                 $rows=$Comic->all(['sh'=>1]," limit $start,$div");
-                
-
         // $rows=$Comic->all(['sh'=>1], "limit 2");
         // *********
-        foreach($rows as $row):
+        ?>
+        <div class="cent">
+            <?php
+                if(($now-1)>0) {
+                    $prev=$now-1;
+                    echo "<a href='?do=$do&p=$prev#comic-title'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
+                    
+                }
+
+                for($i=1;$i<=$pages;$i++){
+                    $size=($i==$now)?"28px":"22px";
+                    echo "<a href='?do=$do&p=$i#comic-title' style='font-size:$size'>";
+                    // echo  $i;
+                    echo  "<span class=' bi bi-$i-square '> </span>";
+                    echo " </a>";
+                }
+                if(($now+1)<=$pages) {
+                    $next=$now+1;
+                    echo "<a href='?do=$do&p=$next#comic-title'> <i class='bi bi-arrow-right-square fs-4'> </i> </a>";
+                    
+                }
+                ?>
+        </div>
+        <?php foreach($rows as $row):
         ?>
         <div>
-            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:498px;height:889px;">
+            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:880px;height:1584px;">
 
         </div>
         <?php endforeach ;?>
@@ -28,20 +51,20 @@
             <?php
                 if(($now-1)>0) {
                     $prev=$now-1;
-                    echo "<a href='?do=$do&p=$prev'> <i class='bi bi-arrow-left-square'></i> </a>";
+                    echo "<a href='?do=$do&p=$prev#comic-title'> <i class='bi bi-arrow-left-square'></i> </a>";
                     
                 }
 
                 for($i=1;$i<=$pages;$i++){
-                    $size=($i==$now)?"24px":"16px";
-                    echo "<a href='?do=$do&p=$i' style='font-size:$size'>";
+                    $size=($i==$now)?"28px":"22px";
+                    echo "<a href='?do=$do&p=$i#comic-title' style='font-size:$size'>";
                     // echo  $i;
                     echo  "<span class=' bi bi-$i-square'> </span>";
                     echo " </a>";
                 }
                 if(($now+1)<=$pages) {
                     $next=$now+1;
-                    echo "<a href='?do=$do&p=$next'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                    echo "<a href='?do=$do&p=$next#comic-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
                     
                 }
                 ?>

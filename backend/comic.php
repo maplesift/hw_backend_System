@@ -9,9 +9,9 @@
         <table width="100%">
             <tr class="bg-yellow1">
                 <td width="15%" class="title">漫畫</td>
-                <td width="7%">顯示</td>
-                <td width="7%" class=" text-danger title">刪除</td>
+                <td width="7%" class="text-primary title">顯示</td>
                 <td width="7%"></td>
+                <td width="7%" class=" text-danger title">刪除</td>
             </tr>
 
             <?php
@@ -29,13 +29,13 @@
                 <td width="7%">
                     <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                 </td>
-                <td width="7%">
-                    <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger">
-                </td>
                 <td>
                     <input type="button" class="btn btn-warning"
                         onclick="op('#cover','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
                         value="更換圖片">
+                </td>
+                <td width="7%">
+                    <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger">
                 </td>
                 <input type="hidden" name="id[]" value="<?=$row['id'];?>">
             </tr>

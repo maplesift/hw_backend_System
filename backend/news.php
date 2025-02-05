@@ -6,8 +6,8 @@
         <div class="p-4 bg-yellow">
             <table width="100%">
                 <tr class="bg-yellow1">
-                    <td width="45%" class="title">更新消息</td>
-                    <td width="8%" class="">顯示</td>
+                    <td width="10%" class="title">更新消息</td>
+                    <td width="8%" class="text-primary title">顯示</td>
                     <td width="7%" class="p-1 text-danger title">刪除</td>
 
                 </tr>
@@ -19,7 +19,7 @@
                     
                     ?>
                 <tr>
-                    <td width="23%">
+                    <td width="10%">
                         <textarea name="text[]" style="width:400px;height:150px;" class="form-control mt-2"><?=$row['text'];?>
                         </textarea>
                     </td>

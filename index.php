@@ -16,7 +16,7 @@ include_once "api/db.php";
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="./icon/00아로나SD.gif" sizes="32x32" type="image/png">
+    <link rel="icon" href="./icon/00SD.gif" sizes="32x32" type="image/png">
     <!-- 字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@ include_once "api/db.php";
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./icon/00아로나SD.gif" class="img-fluid logo" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./icon/00SD.gif" class="img-fluid logo" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -100,7 +100,7 @@ include_once "api/db.php";
                     </div>
                     <div class="items mt-4">
                         <a href="?do=introduction">
-                            <img class="img-fluid" src="./icon/未命名.png" alt="">
+                            <img class="img-fluid" src="./icon/introduction.png" alt="">
                         </a>
 
                     </div>

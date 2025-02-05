@@ -4,14 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>t</title>
+    <title>test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* #td-test {
+            width: 300px;
+            height: 100px;
+            background-color: wheat;
+            text-align: center;
+            vertical-align: middle;
+        } */
+        tbody {
+            display: flex;
+            flex-direction: column;
+            /* background-color: wheat; */
+
+        }
+
+        tr {
+            /* background-color: wheat; */
+            display: flex;
+        }
+
+        th {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: wheat;
+            width: 300px;
+            /* height: 100px; */
+
+        }
+
+        td {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: wheat;
+            width: 300px;
+            height: 50px;
+        }
+    </style>
 </head>
 
 <body>
-    <ol>
+    <!-- <ol>
         <li>s</li>
         <li>q</li>
         <li>a</li>
@@ -20,8 +61,38 @@
         <li>s</li>
         <li>q</li>
         <li>a</li>
-    </ul>
-    <div>
+    </ul> -->
+    <div class="container mt-3">
+        <h2>Basic Table</h2>
+        <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-test">
+                    <td id='td-test'>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div>
 
         <a href="https://www.youtube.com/@bluearchive_tw" target="_blank" rel="noopener noreferrer">
             <img src="./icon/04820x197.jpg" alt="" class="img-fluid ">
@@ -29,7 +100,7 @@
         <a href="https://www.facebook.com/TW.BlueArchive/" target="_blank" rel="noopener noreferrer">
             <img src="./icon/05820x197.jpg" alt="" class="img-fluid ">
         </a>
-    </div>
+    </div> -->
 </body>
 
 </html>

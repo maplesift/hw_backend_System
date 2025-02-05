@@ -286,7 +286,7 @@ button:focus {
 	background-position: center bottom;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
-	background-image: url(../icon/BAShesideOutside신규포럼헤더1920x243TW.png);
+	background-image: url(../icon/BAShesideOutside1920x243TW.png);
 }
 
 .del-underline {
@@ -375,8 +375,12 @@ button:focus {
 	box-sizing: border-box;
 } */
 .int-name {
-	align-items: center;
-	justify-content: center;
+	/* align-items: center;
+	justify-content: center; */
+	/* text-align: center; */
+	vertical-align: middle;
+	/* 垂直置中 */
+	font-size: xx-large;
 }
 
 /* introduction */
