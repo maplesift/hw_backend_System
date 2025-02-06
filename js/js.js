@@ -28,3 +28,40 @@ function op(x, y, url) {
 function cl(x) {
 	$(x).fadeOut();
 }
+
+function login() {
+	let user = {
+		acc: $("#acc").val(),
+		pw: $("#pw").val(),
+	}
+	// console.log(user);
+
+	$.get("./api/chk_acc.php", {
+		acc: user.acc
+	}, (res) => {
+		if (parseInt(res) == 0) {
+			// console.log("chk acc => ", res)
+			alert("查無帳號");
+			// resetForm()
+		} else {
+			$.post("./api/chk_pw.php", user, (res) => {
+				// console.log("login => ", res)
+				if (parseInt(res) == 1) {
+					if (user.acc == 'admin') {
+						location.href = 'admin.php';
+					} else {
+						location.href = 'index.php';
+					}
+				} else {
+					alert("密碼錯誤");
+					// resetForm();
+				}
+			})
+		}
+	})
+
+}
+function resetForm() {
+	$("#acc").val("");
+	$("#pw").val("");
+}

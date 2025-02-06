@@ -28,6 +28,7 @@ include_once "api/db.php";
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
     <!-- <script src="./js/jquery-1.9.1.min.js"></script> -->
+
     <script src="./js/js.js"></script>
 
     <style>
@@ -168,7 +169,7 @@ include_once "api/db.php";
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script>
     function login() {
-        location.href = "?do=login"
+        location.href = "?do=main"
     }
 
     $(".ssaa li").hover(
@@ -204,6 +205,57 @@ include_once "api/db.php";
             }
         });
     });
+
+
+    function login() {
+        let user = {
+            acc: $("#acc").val(),
+            pw: $("#pw").val(),
+        }
+        // console.log(user);
+
+        $.get("./api/chk_acc.php", {
+            acc: user.acc
+        }, (res) => {
+            if (parseInt(res) == 0) {
+                // console.log("chk acc => ", res)
+                Swal.fire({
+                    icon: 'error',
+                    title: '登入失敗',
+                    text: '查無帳號，請重新輸入！',
+                    confirmButtonText: '確定'
+                });
+
+                resetForm()
+            } else {
+                $.post("./api/chk_pw.php", user, (res) => {
+                    if (parseInt(res) == 1) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '登入成功',
+                            text: '歡迎回來！',
+                            confirmButtonText: '確定'
+                        }).then(() => {
+                            location.href = 'admin.php';
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: '登入失敗',
+                            text: '密碼錯誤，請重新輸入！',
+                            confirmButtonText: '確定'
+                        });
+                        resetForm();
+                    }
+                });
+            }
+        })
+    }
+
+    function resetForm() {
+        $("#acc").val("");
+        $("#pw").val("");
+    }
     </script>
 </body>
 
