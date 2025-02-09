@@ -1,8 +1,7 @@
 <style></style>
 
 <div class="col-8 inner">
-    <h2 class="title" id="comic-title">官方漫畫</h2>
-    <hr>
+    <h2 class="title title-boder" id="comic-title">官方漫畫</h2>
     <div class="p-4 ">
         <?php
 

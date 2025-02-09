@@ -1,6 +1,6 @@
 <div class="col-8 inner">
-    <h2 class="title">更新消息</h2>
-    <hr>
+    <h2 class="title-boder  title">更新消息</h2>
+    <!-- <hr> -->
     <div class="p-4 ">
 
         <ul class="ssaa type-list" style="list-style-type:decimal;">

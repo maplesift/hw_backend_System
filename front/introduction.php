@@ -21,7 +21,17 @@
     font-size: 20px;
 }
 
-.int-img {}
+.int-back {
+    display: flex;
+    justify-content: space-around;
+    /* width: 200px; */
+}
+
+.int-back .img-fluid {
+    width: 210px;
+}
+
+#introduction-title:hover {}
     </style>
 
     <?php
@@ -43,9 +53,10 @@
     <div class="col-8 inner">
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
-        <h2 class="title"><a href="?do=introduction#introduction-title" class="int-a highlight-hover"
-                id="introduction-title">學生介紹</a></h2>
-        <hr>
+        <div class="title title-boder "><a href="?do=introduction#introduction-title" class="int-a"
+                id="introduction-title">學生介紹</a>
+        </div>
+        <!-- <hr> -->
         <div class="p-4 int">
             <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
             <div class="cent">
@@ -115,12 +126,14 @@
           
             if ($stmt) {
                 // 動態生成title
-                echo "<h2 class='title'><a href='?do=$do&p=$now#introduction-title' class='int-a highlight-hover' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2><hr>";
+                echo "<h2 class='title title-boder'><a href='?do=$do&p=$now#introduction-title' class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2>";
                 // 動態生成 img
                 echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'><hr>";
                 echo "<pre><div class='int-text'>{$stmt['text']}</div></pre>";
                 // 底下回上一頁
-                echo "<a href='?do=$do&p=$now#introduction-title'><img class='img-fluid' src='./icon/introduction.png'> </a>";
+                echo "<a href='?do=$do&p=$now#introduction-title' class='int-back'>
+                    <img class='img-fluid' src='./icon/introduction.png'>
+                    </a>";
             } else {
             echo "<p>找不到此頁面。</p>";
             }

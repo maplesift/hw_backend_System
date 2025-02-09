@@ -2,8 +2,8 @@
 
 </style>
 <div class="col-8 inner">
-    <h2 class="title">最新文章</h2>
-    <hr>
+    <h2 class="title title-boder">最新文章</h2>
+    <!-- <hr>     -->
     <div class="p-4 ">
 
         <ul class="ssaa type-list" style="list-style-type:decimal;">

@@ -256,6 +256,11 @@ button:focus {
 	font-weight: bold;
 }
 
+.title-boder {
+	border-bottom: 1px solid rgb(161, 156, 156);
+	padding-bottom: 15px;
+}
+
 .logo {
 	width: 44px;
 	height: 44px;
@@ -371,9 +376,21 @@ button:focus {
 	transition: 0.3s;
 }
 
+
 .int-logo:hover {
 	transform: scale(1.15);
 }
+
+#introduction-title {
+	width: 150px;
+	height: 44px;
+	font-size: 32px;
+	/* transition: all 0.5s ease; */
+	/* display: inline-block; */
+	/* position: relative; */
+
+}
+
 
 /* 
 
