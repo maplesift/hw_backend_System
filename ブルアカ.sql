@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-02-05 09:18:51
+-- 產生時間： 2025-02-09 13:27:29
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -78,11 +78,10 @@ CREATE TABLE `comics` (
 --
 
 INSERT INTO `comics` (`id`, `img`, `sh`) VALUES
-(1, 'comic_5.jpg', 1),
+(1, 'comic_1.jpg', 1),
 (2, 'comic_2.jpg', 1),
 (3, 'comic_3.jpg', 1),
-(4, 'comic_4.jpg', 1),
-(5, 'comic_6.jpg', 1);
+(4, 'comic_4.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -95,6 +94,8 @@ CREATE TABLE `introductions` (
   `name` text NOT NULL,
   `logo` text NOT NULL COMMENT '頭像',
   `img` text NOT NULL COMMENT '大圖',
+  `schools` text NOT NULL COMMENT '學校',
+  `societies` text NOT NULL COMMENT '社團',
   `sh` int(1) NOT NULL DEFAULT 1,
   `text` text NOT NULL COMMENT '文字介紹'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -103,14 +104,14 @@ CREATE TABLE `introductions` (
 -- 傾印資料表的資料 `introductions`
 --
 
-INSERT INTO `introductions` (`id`, `name`, `logo`, `img`, `sh`, `text`) VALUES
-(3, 'カズサ', 'kazusa_logo.png', 'kazusa.jpg', 1, '【生徒紹介】\r\n放課後スイーツ部に所属するゆったりとした静かな性格のカズサさん。\r\nいつも部員の皆さんの奇行に巻き込まれて苦労をしている一方で、\r\nそういう所も大切に思っている心優しい生徒さんです！\r\n\r\n「うん、たまにはこういうのも悪くない 」                                                                                                                                                                                                                                                                                                                        '),
-(4, 'キサキ', 'kisaki-logo.png', 'kisaki.jpg', 1, '【生徒紹介】\r\n山海経高級中学校所属、生徒会「玄龍門」の門主、キサキさん。\r\n古風で威厳のある言葉遣いと、どこか神秘的にも感じられる印象が相まって、\r\n近寄りがたい雰囲気を漂わせていますが、\r\n本人はむしろ、\r\nそのイメージを職務に活用しているのだとか…。\r\n\r\n「さて、妾に何を見せてくれるのじゃ？」                                                                                                                                                                                                                                                                                                                        '),
-(5, 'キララ', 'kirara-logo.png', 'kirara.jpg', 1, '【生徒紹介】\r\nゲヘナ学園所属、明るい性格の持ち主のキララさん。\r\n初めて出会った人とも仲良くおしゃべりできるくらい、誰とでも仲良くなれるみたいです！\r\n\r\n「夜桜キララ、楽しむ準備完了～！」                                                                                                                                                                                                                                                                                                                        '),
-(6, 'ミカ', 'mika-logo.png', 'mika.jpg', 1, '【生徒紹介】\r\nトリニティの生徒会「ティーパーティー」の元メンバーであるミカさん。\r\nいつも楽しそうに笑い、無邪気な姿を見せるミカさんですが、人に言えない悩みを胸の裡に抱えているようで…。\r\n\r\n「うん、お待たせ！これからはなんでも私に任せてね☆」                                                                                                                                                                                                                                                                                                                         '),
-(7, 'セイア', 'seia-logo.png', 'seia.jpg', 1, '【生徒紹介】\r\nトリニティ総合学園所属、生徒連合「サンクトゥス」のリーダーにしてティーパーティーの一員であるセイアさん。\r\n衒学的でつかみどころのない口調で話す生徒さん。大の本好きだとか…？？\r\n\r\n「いずれ――道は繋がるだろう。」                                                                                                                                                                                                                                                                                                                        '),
-(8, '初音ミク', 'miku-logo.png', 'miku.jpg', 1, '【生徒紹介】\r\nいつも明るくて、歌うことが大好きなバーチャル・シンガー、初音ミクさん！\r\nキヴォトスの技術を利用することで、肉体を得てこの世界に降り立つことに成功しました...！\r\nここにもミクさんのファンたちがたくさんいるようです♪\r\n\r\n「もっともっと楽しくしちゃうよ！」                                                                                                                                                                                                                                                                                                             '),
-(9, 'マリー', 'mari-logo.png', 'mari.jpg', 1, '【生徒紹介】\r\nシスターフッドのシスターにして、\r\nアイドルユニット「アンティーク・セラフィム」のメンバーであるマリーさん。\r\n人助けから始めたアイドル活動でしたが、\r\nマリーさんの「みんなを幸せにしたい」という想いはアイドルに向いていたようで…。\r\n\r\n「本当は……憧れていたんです、アイドルに」                                                                                                                                                                                                                                                ');
+INSERT INTO `introductions` (`id`, `name`, `logo`, `img`, `schools`, `societies`, `sh`, `text`) VALUES
+(3, 'カズサ', 'kazusa_logo.png', 'kazusa.jpg', 'toriniti', '放課後スイーツ部', 1, '【生徒紹介】\r\n放課後スイーツ部に所属するゆったりとした静かな性格のカズサさん。\r\nいつも部員の皆さんの奇行に巻き込まれて苦労をしている一方で、\r\nそういう所も大切に思っている心優しい生徒さんです！\r\n\r\n「うん、たまにはこういうのも悪くない 」                                                                                                                                                                                                                                                                                                                                                                                                '),
+(4, 'キサキ', 'kisaki-logo.png', 'kisaki.jpg', 'sengaikyo', '玄龍門', 1, '【生徒紹介】\r\n山海経高級中学校所属、生徒会「玄龍門」の門主、キサキさん。\r\n古風で威厳のある言葉遣いと、どこか神秘的にも感じられる印象が相まって、\r\n近寄りがたい雰囲気を漂わせていますが、\r\n本人はむしろ、\r\nそのイメージを職務に活用しているのだとか…。\r\n\r\n「さて、妾に何を見せてくれるのじゃ？」                                                                                                                                                                                                                                                                                                                                                                                                '),
+(5, 'キララ', 'kirara-logo.png', 'kirara.jpg', 'gehenna', 'キラキラ部', 1, '【生徒紹介】\r\nゲヘナ学園所属、明るい性格の持ち主のキララさん。\r\n初めて出会った人とも仲良くおしゃべりできるくらい、誰とでも仲良くなれるみたいです！\r\n\r\n「夜桜キララ、楽しむ準備完了～！」                                                                                                                                                                                                                                                                                                                                                                                                '),
+(6, 'ミカ', 'mika-logo.png', 'mika.jpg', 'toriniti', 'ティーパーティー ', 1, '【生徒紹介】\r\nトリニティの生徒会「ティーパーティー」の元メンバーであるミカさん。\r\nいつも楽しそうに笑い、無邪気な姿を見せるミカさんですが、人に言えない悩みを胸の裡に抱えているようで…。\r\n\r\n「うん、お待たせ！これからはなんでも私に任せてね☆」                                                                                                                                                                                                                                                                                                                                                                                                 '),
+(7, 'セイア', 'seia-logo.png', 'seia.jpg', 'toriniti', 'ティーパーティー ', 1, '【生徒紹介】\r\nトリニティ総合学園所属、\r\n生徒連合「サンクトゥス」のリーダーにしてティーパーティーの一員であるセイアさん。\r\n衒学的でつかみどころのない口調で話す生徒さん。\r\n大の本好きだとか…？？\r\n\r\n「いずれ――道は繋がるだろう。」                                                                                                                                                                                                                                                                                                                                                                                                '),
+(8, 'マリー', 'mari-logo.png', 'mari.jpg', 'toriniti', 'シスターフッド', 1, '【生徒紹介】\r\nシスターフッドのシスターにして、\r\nアイドルユニット「アンティーク・セラフィム」のメンバーであるマリーさん。\r\n人助けから始めたアイドル活動でしたが、\r\nマリーさんの「みんなを幸せにしたい」という想いはアイドルに向いていたようで…。\r\n\r\n「本当は……憧れていたんです、アイドルに」                                                                                                                                                                                                                                                                                                                                                                                                '),
+(9, 'リオ', 'rio_logo.png', 'rio.jpg', 'minenia', 'セミナー', 1, '【生徒紹介】\r\nミレニアムサイエンススクール所属、生徒会「セミナー」の会長であるリオさん。\r\n合理主義者で、ミレニアムと世界の安全のためなら手段を選ばないことから、\r\n「ビッグシスター」と呼ばれるようになったのだとか…。\r\nまた「アバンギャルド君」をはじめ、\r\n独創的なセンスの持ち主でもあるみたいです！\r\n\r\n「光のない場所で再会するでしょう。」                                                                                                                                                                                                                                                                                                                                 ');
 
 -- --------------------------------------------------------
 
@@ -171,7 +172,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 544);
+(1, 543);
 
 --
 -- 已傾印資料表的索引
@@ -239,13 +240,13 @@ ALTER TABLE `bottom`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `comics`
 --
 ALTER TABLE `comics`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `introductions`
 --
 ALTER TABLE `introductions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
