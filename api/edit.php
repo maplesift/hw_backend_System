@@ -5,6 +5,7 @@
 include_once "db.php";
 
 $table=$_POST['table'];
+
 $db=ucfirst($table);
 
 
@@ -37,6 +38,7 @@ if(isset($_POST['id'])){
                 case 'introduction':
                     $row['name']=$_POST['name'][$idx];
                     $row['text']=$_POST['text'][$idx];
+                    $row['societies']=$_POST['societies'][$idx];
                     $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
                 default:
                 // in_arrar (可當作複選的概念)
@@ -53,7 +55,8 @@ if(isset($_POST['id'])){
         }
     }
 }
-
+// dd($table);
+// header(location:admin.php?do=$table);
 to("../admin.php?do=$table")
 // dd($_POST);
 ?>

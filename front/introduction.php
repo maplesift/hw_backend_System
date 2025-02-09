@@ -18,7 +18,7 @@
 }
 
 .int-th {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .int-back {
@@ -29,6 +29,12 @@
 
 .int-back .img-fluid {
     width: 210px;
+}
+
+.int-societies {
+    font-size: 20px;
+    vertical-align: middle;
+
 }
 
 #introduction-title:hover {}
@@ -50,7 +56,7 @@
     ?>
     <style>
     </style>
-    <div class="col-8 inner">
+    <div class="col-7 inner">
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
         <div class="title title-border "><a href="?do=<?=$do;?>&p=<?=$now;?>#introduction-title" class="int-a"
@@ -63,12 +69,12 @@
                 <?php
                 if(($now-1)>0) {
                     $prev=$now-1;
-                    echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square'></i> </a>";
+                    echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
                     
                 }
 
                 for($i=1;$i<=$pages;$i++){
-                    $size=($i==$now)?"28px":"22px";
+                    $size=($i==$now)?"29px":"23.63px";
                     echo "<a href='?do=$do&p=$i#introduction-title' style='font-size:$size'>";
                     // echo  $i;
                     echo  "<span class=' bi bi-$i-square'> </span>";
@@ -76,7 +82,7 @@
                 }
                 if(($now+1)<=$pages) {
                     $next=$now+1;
-                    echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                    echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square fs-4'> </i> </a>";
                     
                 }
                 ?>
@@ -85,13 +91,15 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th width="10%" class="int-th">頭像</th>
-                        <th width="30%" class="int-th">名前</th>
+                        <th width="8%" class="int-th ">頭像</th>
+                        <th width="8%" class="int-th ">名前</th>
+                        <th width="8%" class="int-th ">學園</th>
+                        <th width="8%" class="int-th ">部活</th>
                     </tr>
                     <?php foreach ($rows as $row): ?>
 
                     <tr>
-                        <td width="10%">
+                        <td width="8%">
                             <!-- 動態生成logo -->
                             <div class="int-logo-div">
                                 <a href="?do=<?=$do;?>&id=<?= $row['id']?>&p=<?=$now?>#introduction-title">
@@ -100,8 +108,18 @@
                                 </a>
                             </div>
                         </td>
-                        <td width="30%" class="int-name">
+                        <!-- 名前 -->
+                        <td width="8%" class="int-name">
                             <?=$row['name'];?>
+                        </td>
+                        <!-- 學員 -->
+                        <td width="8%" class="int-name">
+                            <img src="./icon/<?=$row['schools'];?>.png" class="img-fluid mt-4 "
+                                style="width:150px;height:150px;">
+                        </td>
+                        <!-- 部活 -->
+                        <td width="8%" class="int-societies">
+                            <?=$row['societies'];?>
                         </td>
                     </tr>
                     <?php endforeach; ?>

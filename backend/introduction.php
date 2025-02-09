@@ -12,12 +12,12 @@
         <div class="p-4 bg-yellow">
             <table width="100%">
                 <tr class="bg-yellow1">
-                    <td width="8%">Logo</td>
-                    <td width="10%">大圖</td>
-                    <td width="9%" class="">學生姓名</td>
-                    <td width="9%" class="">學園</td>
-                    <td width="9%" class="">社團</td>
-                    <td width="10%" class="">文字介紹</td>
+                    <td width="8%" class="cent">Logo</td>
+                    <td width="10%" class="cent">大圖</td>
+                    <td width="9%" class="cent">學生姓名</td>
+                    <td width="9%" class="cent">學園</td>
+                    <td width="11%" class="cent">社團</td>
+                    <td width="10%" class="cent">文字介紹</td>
                     <td width="5%" class="text-primary title">顯示</td>
                     <td width="5%"></td>
                     <td width="5%" class="p-1 text-danger title">刪除</td>
@@ -34,9 +34,11 @@
                     
                     ?>
                 <tr>
+                    <!-- logo -->
                     <td width="8%">
                         <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-2" style="width:120px;height:120px;">
                     </td>
+                    <!-- 大圖 -->
                     <td width="10%">
                         <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:151px;height:201px;">
                     </td>
@@ -51,13 +53,15 @@
                             style="width:120px;height:120px;">
                     </td>
                     <!-- 社團 -->
-                    <td width="9%">
-                        <input type="text" name="societies[]" value="<?=$row['name'];?>" class="form-control ">
+                    <td width="11%">
+                        <input type="text" name="societies[]" value="<?=$row['societies'];?>" class="form-control ">
                     </td>
+                    <!-- 介紹 -->
                     <td width="10%">
-                        <textarea name="text[]" style="width:300px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
+                        <textarea name="text[]" style="width:230px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
                         </textarea>
                     </td>
+                    <!-- 顯示 -->
                     <td width="5%">
                         <input type="checkbox" name="sh[]" class="" value="<?=$row['id'];?>"
                             <?=($row['sh']==1)?'checked':'';?>>

@@ -34,12 +34,12 @@
             <?php
                 if(($now-1)>0) {
                     $prev=$now-1;
-                    echo "<a href='?do=$do&p=$prev'> <i class='bi bi-arrow-left-square'></i> </a>";
+                    echo "<a href='?do=$do&p=$prev'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
                     
                 }
 
                 for($i=1;$i<=$pages;$i++){
-                    $size=($i==$now)?"24px":"16px";
+                    $size=($i==$now)?"29px":"23.63px";
                     echo "<a href='?do=$do&p=$i' style='font-size:$size'>";
                     // echo  $i;
                     echo  "<span class=' bi bi-$i-square'> </span>";
@@ -47,7 +47,7 @@
                 }
                 if(($now+1)<=$pages) {
                     $next=$now+1;
-                    echo "<a href='?do=$do&p=$next'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                    echo "<a href='?do=$do&p=$next'> <i class='bi bi-arrow-right-square fs-4'> </i> </a>";
                     
                 }
                 ?>

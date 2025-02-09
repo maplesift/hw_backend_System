@@ -26,7 +26,7 @@
                 }
 
                 for($i=1;$i<=$pages;$i++){
-                    $size=($i==$now)?"28px":"22px";
+                    $size=($i==$now)?"29px":"22px";
                     echo "<a href='?do=$do&p=$i#comic-title' style='font-size:$size'>";
                     // echo  $i;
                     echo  "<span class=' bi bi-$i-square '> </span>";

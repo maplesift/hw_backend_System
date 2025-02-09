@@ -61,7 +61,7 @@ class DB{
             unset($array['id']);
             $set=$this->a2s($array);
             $sql ="UPDATE $this->table SET ".join(',',$set)." where `id`='$id'";
-            echo $sql;
+            // echo $sql;
         }else{
             //insert
             $cols=array_keys($array);
