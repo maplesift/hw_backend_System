@@ -2,7 +2,7 @@
 
 </style>
 <div class="col-8 inner">
-    <h2 class="title title-boder">最新文章</h2>
+    <h2 class="title title-border">最新文章</h2>
     <!-- <hr>     -->
     <div class="p-4 ">
 

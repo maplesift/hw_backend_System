@@ -6,8 +6,8 @@
 }
 </style>
 <div class="col-9 ">
-    <h2 class="title">學生介紹管理</h2>
-    <hr>
+    <h2 class="title title-border">學生介紹管理</h2>
+
     <form method="post" action="./api/edit.php">
         <div class="p-4 bg-yellow">
             <table width="100%">
@@ -15,8 +15,8 @@
                     <td width="8%">Logo</td>
                     <td width="10%">大圖</td>
                     <td width="9%" class="">學生姓名</td>
-                    <td width="9%" class="">學校(暫)</td>
-                    <td width="9%" class="">社團(暫)</td>
+                    <td width="9%" class="">學園</td>
+                    <td width="9%" class="">社團</td>
                     <td width="10%" class="">文字介紹</td>
                     <td width="5%" class="text-primary title">顯示</td>
                     <td width="5%"></td>
@@ -46,11 +46,13 @@
                     </td>
                     <!-- 學校 -->
                     <td width="9%">
-                        <input type="text" name="name[]" value="<?=$row['name'];?>" class="form-control ">
+                        <!-- <input type="text" name="school[]" value="<?=$row['name'];?>" class="form-control "> -->
+                        <img src="./icon/<?=$row['schools'];?>.png" class="img-fluid mt-2"
+                            style="width:120px;height:120px;">
                     </td>
                     <!-- 社團 -->
                     <td width="9%">
-                        <input type="text" name="name[]" value="<?=$row['name'];?>" class="form-control ">
+                        <input type="text" name="societies[]" value="<?=$row['name'];?>" class="form-control ">
                     </td>
                     <td width="10%">
                         <textarea name="text[]" style="width:300px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
@@ -62,7 +64,7 @@
                     </td>
                     <td>
                         <input type="button" class="btn btn-warning" width="5%"
-                            onclick="op('#modal','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
+                            onclick="op('#modal','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&table=<?=$do;?>')"
                             value="更換圖片">
                     </td>
                     <td width="5%">

@@ -1,7 +1,7 @@
 <!-- From admin.php -->
 <div class="col-6 ">
-    <h2 class="title">更新消息管理</h2>
-    <hr>
+    <h2 class="title title-border">更新消息管理</h2>
+    <!-- <hr> -->
     <form method="post" action="./api/edit.php">
         <div class="p-4 bg-yellow">
             <table width="100%">

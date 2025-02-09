@@ -256,7 +256,7 @@ button:focus {
 	font-weight: bold;
 }
 
-.title-boder {
+.title-border {
 	border-bottom: 1px solid rgb(161, 156, 156);
 	padding-bottom: 15px;
 }
@@ -496,6 +496,31 @@ button:focus {
 }
 
 /* footer end */
+/* back 左選單 */
+.types {
+	width: 400px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #999;
+	border-radius: 50px;
+	box-shadow: 2px 2px 5px #ccc;
+	text-align: center;
+	position: relative;
+	transition: all 0.5s ease;
+	transform: scale(1);
+	top: 0;
+}
+
+.types:hover {
+	border: 2px solid blue;
+	background: lightcyan;
+	transition: all 0.5s ease;
+	transform: scale(1.08);
+	top: -4px;
+}
+
+/* back 左選單End */
+
 
 
 /* =========================右下回到頂端箭頭=========================== */

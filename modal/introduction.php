@@ -30,14 +30,34 @@
             <td><input type="text" name="name" id="name" class="form-control"></td>
         </tr>
 
-        <div>
+        <tr>
+            <td class="title">學園:
 
-        </div>
+            </td>
+            <td>
+                <select multiple class="form-select" id="schools" name="schools">
+                    <option value="abydos">アビドス</option>
+                    <option value="arius">アリウス</option>
+                    <option value="valkyrie">ヴァルキューレ</option>
+                    <option value="gehenna">ゲヘナ</option>
+                    <option value="sengaikyo">山海経</option>
+                    <option value="toriniti">トリニティ</option>
+                    <option value="hyakkiyako">百鬼夜行</option>
+                    <option value="minenia">ミレニア</option>
+                    <option value="reddouinta">レッドウィンター</option>
+                    <option value="srt">SRT</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="padding-t">
+            <td class="title ">社團:</td>
+            <td><input type="text" name="societies" id="societies" class="form-control"></td>
+        </tr>
 
         <tr class="mt-3">
             <td class="title">文字介紹:</td>
             <td>
-                <textarea name="text" style="width:500px;height:100px;" class="cent form-control"></textarea>
+                <textarea name="text" style="width:515px;height:100px;" class="cent form-control"></textarea>
             </td>
         </tr>
     </table>

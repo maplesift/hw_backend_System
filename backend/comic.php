@@ -3,8 +3,8 @@
 
 </style>
 <div class="col-6 ">
-    <h2 class="title">漫畫管理</h2>
-    <hr>
+    <h2 class="title-border title">漫畫管理</h2>
+    <!-- <hr> -->
     <div class="p-4 bg-yellow">
         <table width="100%">
             <tr class="bg-yellow1">

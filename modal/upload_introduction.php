@@ -10,6 +10,24 @@
             <td class="title">大圖:</td>
             <td><input type="file" name="img" id="img" class="form-control"></td>
         </tr>
+        <tr>
+            <td class="title">學園:
+            </td>
+            <td>
+                <select class="form-select" id="schools" name="schools">
+                    <option value="abydos">アビドス</option>
+                    <option value="arius">アリウス</option>
+                    <option value="valkyrie">ヴァルキューレ</option>
+                    <option value="gehenna">ゲヘナ</option>
+                    <option value="sengaikyo">山海経</option>
+                    <option value="toriniti">トリニティ</option>
+                    <option value="hyakkiyako">百鬼夜行</option>
+                    <option value="minenia">ミレニア</option>
+                    <option value="reddouinta">レッドウィンター</option>
+                    <option value="srt">SRT</option>
+                </select>
+            </td>
+        </tr>
 
     </table>
     <div class="cent">

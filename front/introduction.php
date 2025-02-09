@@ -53,7 +53,7 @@
     <div class="col-8 inner">
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
-        <div class="title title-boder "><a href="?do=introduction#introduction-title" class="int-a"
+        <div class="title title-border "><a href="?do=<?=$do;?>&p=<?=$now;?>#introduction-title" class="int-a"
                 id="introduction-title">學生介紹</a>
         </div>
         <!-- <hr> -->

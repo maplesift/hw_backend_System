@@ -1,7 +1,7 @@
 <!-- From admin.php -->
 <div class="col-6 ">
-    <h2 class="title">進站總人數管理</h2>
-    <hr>
+    <h2 class="title title-border">進站總人數管理</h2>
+    <!-- <hr> -->
     <div class="p-4 ">
         <form method="post" action="./api/update_data.php">
             <table width="100%">
