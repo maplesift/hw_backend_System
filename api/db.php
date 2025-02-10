@@ -156,6 +156,10 @@ function q($sql){
     // next SELECT * FROM introductions WHERE id > $_GET['id'] ORDER BY id ASC LIMIT 1
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
+function qOne($sql){
+    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=ブルアカ",'root','');
+    return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
 
 function dd($array){
     echo "<pre>";

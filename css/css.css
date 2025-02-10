@@ -376,6 +376,15 @@ button:focus {
 	transition: 0.3s;
 }
 
+.int-text {
+	font-size: 20px;
+	overflow: hidden;
+	/* border-bottom: 1px solid #c3c3c3; */
+}
+
+.int-radius {
+	border-radius: 20px;
+}
 
 .int-logo:hover {
 	transform: scale(1.15);

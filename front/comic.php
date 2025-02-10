@@ -41,8 +41,8 @@
         </div>
         <?php foreach($rows as $row):
         ?>
-        <div>
-            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:880px;height:1584px;">
+        <div class="title-border">
+            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2 " style="width:880px;height:1584px;">
 
         </div>
         <?php endforeach ;?>

@@ -11,11 +11,7 @@
     font-weight: bold;
 }
 
-.int-text {
-    font-size: 20px;
-    overflow: hidden;
 
-}
 
 .int-th {
     font-size: 22px;
@@ -23,12 +19,12 @@
 
 .int-back {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-evenly; */
     /* width: 200px; */
 }
 
 .int-back .img-fluid {
-    width: 210px;
+    width: 250px;
 }
 
 .int-societies {
@@ -36,9 +32,11 @@
     vertical-align: middle;
 
 }
-.int-items{
+
+.int-items {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
 }
 
 #introduction-title:hover {}
@@ -139,16 +137,13 @@
             // $sql = "SELECT * FROM introductions WHERE id = :id";
             // $stmt = $pdo->prepare($sql);
             // $stmt = $Introduction->all(['id'=>$id]);
-            // $pervid= q("SELECT * FROM introductions WHERE id < {$_GET['id']} ORDER BY id DESC LIMIT 1");
-            $prevId= $Introduction->all("WHERE id < {$id}", " ORDER BY id DESC LIMIT 1");
-            // $pervid =$pervId[0]['id'];
-            $nextId =$Introduction->all("WHERE id > {$id}", " ORDER BY id ASC LIMIT 1");
-            // $nextid =$nextId[0]['id'];
+            $prevId= qOne("SELECT * FROM introductions WHERE id < {$id} ORDER BY id DESC LIMIT 1");
+            $nextId= qOne("SELECT * FROM introductions WHERE id > {$id} ORDER BY id ASC LIMIT 1");
+
             $stmt = $Introduction->find(['id'=>$id]);
             // dd($stmt);
-            // dd($pervId);
-            // dd($pervId[0]['id']);
-            // dd($nextId[0]['id']);
+            // dd($prevId);
+            // dd($nextId);
             // dd($stmt);
             // exit();
             // $Introduction->all
@@ -157,24 +152,39 @@
           
             if ($stmt) {
                 // 動態生成title
-                echo "<h2 class='title title-boder'><a href='?do=$do&p=$now#introduction-title' class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2>";
+                echo "<h2 class='title title-border'><a href='?do=$do&p=$now#introduction-title' class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2>";
                 // 動態生成 img
-                echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'><hr>";
-                echo "<pre><div class='int-text'>{$stmt['text']}</div></pre>";
-                // 底下回上一頁
-                echo "<div class='int-items'>
-                        <a href='?do=$do&id={$prevId[0]['id']}#introduction-title'>
-                            prev
-                        </a>
-                        <a href='?do=$do&p=$now#introduction-title' class='int-back'>
-                        <img class='img-fluid' src='./icon/introduction.png'>
-                        </a>
-                        <a href='?do=$do&id={$nextId[0]['id']}#introduction-title'>
-                            next
-                        </a>
-                    </div>
+                echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'>";
+                echo "<pre><div class='int-text title-border mt-4'>{$stmt['text']}</div>
+                </pre>";
+                
+                // footer 回上一頁 ,左右可選跳至上下學生(id)
+                echo "<div class='int-items'>";
+                    echo "<div>";
+                if(isset($prevId['id'])){
 
-                    ";
+                    echo "<a href='?do=$do&id={$prevId['id']}#introduction-title'>
+                                    <img src='./upload/{$prevId['logo']}' class='img-fluid mt-4 int-logo int-radius'
+                                        style='width:120px;height:120px;'>
+                          </a>";
+                }
+                    echo "</div>";
+                    
+                    echo "<div style='display:flex;align-items: center;'>
+                     <a href='?do=$do&p=$now#introduction-title'  class='int-back'>
+                        <img class='img-fluid' src='./icon/introduction.png'>
+                     </a>
+                     </div>";
+                     echo "<div>";
+                     if(isset($nextId['id'])){
+                     echo "<a href='?do=$do&id={$nextId['id']}#introduction-title'>
+                                    <img src='./upload/{$nextId['logo']}' class='img-fluid mt-4 int-logo int-radius'
+                                        style='width:120px;height:120px;'>
+                           </a>";
+                    }
+            
+                  echo "     </div>
+                    </div>";
             } else {
             echo "<p>找不到此頁面。</p>";
             }
@@ -221,5 +231,4 @@
                 </li>
             </ul>
         </div>
-    </div>
     </div>
