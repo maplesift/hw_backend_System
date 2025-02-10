@@ -1,4 +1,4 @@
-# PHP 中 if (\$stmt) 的判斷條件說明
+# PHP 中 if ($stmt) 的判斷條件說明
 
 在 PHP 中，`if ($stmt) {}` 判斷條件的真假取決於 `$stmt` 的值是否為「**真值（truthy）**」或「**假值（falsy）**」。
 

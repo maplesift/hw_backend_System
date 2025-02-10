@@ -40,6 +40,22 @@
 }
 
 #introduction-title:hover {}
+
+
+.box {
+    min-width: 100px;
+    min-height: 100px;
+    padding-left: 13px;
+    /* background-color: skyblue; */
+}
+
+.test {
+
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
     </style>
 
     <?php
@@ -58,7 +74,7 @@
     ?>
     <style>
     </style>
-    <div class="col-7 inner">
+    <div class="col-7  inner">
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
         <div class="title title-border "><a href="?do=<?=$do;?>&p=<?=$now;?>#introduction-title" class="int-a"
@@ -95,7 +111,7 @@
                     <tr>
                         <th width="8%" class="int-th ">頭像</th>
                         <th width="8%" class="int-th ">名前</th>
-                        <th width="8%" class="int-th ">學園</th>
+                        <th width="8%" class="int-th ">学園</th>
                         <th width="8%" class="int-th ">部活</th>
                     </tr>
                     <?php foreach ($rows as $row): ?>
@@ -105,7 +121,7 @@
                             <!-- 動態生成logo -->
                             <div class="int-logo-div">
                                 <a href="?do=<?=$do;?>&id=<?= $row['id']?>&p=<?=$now?>#introduction-title">
-                                    <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-4 int-logo"
+                                    <img src="./upload/<?=$row['logo'];?>" class="img-fluid mt-4 int-logo int-radius"
                                         style="width:150px;height:150px;">
                                 </a>
                             </div>
@@ -154,42 +170,68 @@
                 // 動態生成title
                 echo "<h2 class='title title-border'><a href='?do=$do&p=$now#introduction-title' class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2>";
                 // 動態生成 img
+                echo "<div class='d-flex'>";
                 echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'>";
-                echo "<pre><div class='int-text title-border mt-4'>{$stmt['text']}</div>
-                </pre>";
-                
-                // footer 回上一頁 ,左右可選跳至上下學生(id)
-                echo "<div class='int-items'>";
-                    echo "<div>";
-                if(isset($prevId['id'])){
+                echo "<div class='test'>
+                <div class='box'>
+                <div style='font-size: 25px; font-weight:bold;' class=''>学園
+                </div>
+                <div>
+                <img src='./icon/{$stmt['schools']}.png' class='img-fluid  '
+                    style='width:150px;height:150px;'>
+                </div>
+                </div>
+    <div class='box'>
+        <div style='font-size: 26px; font-weight:bold; padding-bottom: 10px;' class=' '>部活
+        </div>
+        <div class='cent'style='font-size:26px;'>
+            {$stmt['societies']}
+        </div>
+    </div>
+    <div class='box'>
 
-                    echo "<a href='?do=$do&id={$prevId['id']}#introduction-title'>
-                                    <img src='./upload/{$prevId['logo']}' class='img-fluid mt-4 int-logo int-radius'
-                                        style='width:120px;height:120px;'>
-                          </a>";
-                }
-                    echo "</div>";
-                    
-                    echo "<div style='display:flex;align-items: center;'>
-                     <a href='?do=$do&p=$now#introduction-title'  class='int-back'>
-                        <img class='img-fluid' src='./icon/introduction.png'>
-                     </a>
-                     </div>";
-                     echo "<div>";
-                     if(isset($nextId['id'])){
-                     echo "<a href='?do=$do&id={$nextId['id']}#introduction-title'>
-                                    <img src='./upload/{$nextId['logo']}' class='img-fluid mt-4 int-logo int-radius'
-                                        style='width:120px;height:120px;'>
-                           </a>";
-                    }
-            
-                  echo "     </div>
-                    </div>";
-            } else {
-            echo "<p>找不到此頁面。</p>";
+    </div>
+    </div>";
+    echo "</div>";
+
+    echo "
+    <pre><div class='int-text title-border mt-4'>{$stmt['text']}</div>
+                </pre>";
+
+    // footer 回上一頁 ,左右可選跳至上下學生(id)
+    echo "<div class='int-items'>";
+        echo "<div>";
+            if(isset($prevId['id'])){
+
+            echo "<a href='?do=$do&id={$prevId['id']}#introduction-title'>
+                <img src='./upload/{$prevId['logo']}' class='img-fluid mt-4 int-logo int-radius'
+                    style='width:120px;height:120px;'>
+            </a>";
             }
+            echo "</div>";
+
+        echo "<div style='display:flex;align-items: center;'>
+            <a href='?do=$do&p=$now#introduction-title' class='int-back'>
+                <img class='img-fluid' src='./icon/introduction.png'>
+            </a>
+        </div>";
+        echo "<div>";
+            if(isset($nextId['id'])){
+            echo "<a href='?do=$do&id={$nextId['id']}#introduction-title'>
+                <img src='./upload/{$nextId['logo']}' class='img-fluid mt-4 int-logo int-radius'
+                    style='width:120px;height:120px;'>
+            </a>";
             }
-            ?>
+
+            echo "</div>
+    </div>";
+    // footer end
+    } else {
+    echo "<p>找不到此頁面。</p>";
+    }
+    }
+
+    ?>
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
         <div class="cent">
