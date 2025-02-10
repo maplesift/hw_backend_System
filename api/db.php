@@ -28,10 +28,8 @@ class DB{
             }else{
                 // $sql=$sql.$arg[0];
                 $sql .= $arg[0];
-
             }
         }
-
         if(!empty($arg[1])){
             $sql=$sql . $arg[1];
         }
@@ -41,7 +39,6 @@ class DB{
 
     function find($id){
         $sql="SELECT * FROM $this->table ";
-
         if(is_array($id)){
             $where=$this->a2s($id);
             $sql=$sql . " WHERE ". join(" && ",$where);
@@ -155,7 +152,9 @@ class DB{
 function q($sql){
     $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=ブルアカ",'root','');
     // echo $sql;
-    return $pdo->query($sql)->fetchAll();
+    // prev SELECT * FROM introductions WHERE id < $_GET['id'] ORDER BY id DESC LIMIT 1
+    // next SELECT * FROM introductions WHERE id > $_GET['id'] ORDER BY id ASC LIMIT 1
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function dd($array){

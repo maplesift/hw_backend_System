@@ -36,6 +36,10 @@
     vertical-align: middle;
 
 }
+.int-items{
+    display: flex;
+    justify-content: space-around;
+}
 
 #introduction-title:hover {}
     </style>
@@ -135,7 +139,16 @@
             // $sql = "SELECT * FROM introductions WHERE id = :id";
             // $stmt = $pdo->prepare($sql);
             // $stmt = $Introduction->all(['id'=>$id]);
+            // $pervid= q("SELECT * FROM introductions WHERE id < {$_GET['id']} ORDER BY id DESC LIMIT 1");
+            $prevId= $Introduction->all("WHERE id < {$id}", " ORDER BY id DESC LIMIT 1");
+            // $pervid =$pervId[0]['id'];
+            $nextId =$Introduction->all("WHERE id > {$id}", " ORDER BY id ASC LIMIT 1");
+            // $nextid =$nextId[0]['id'];
             $stmt = $Introduction->find(['id'=>$id]);
+            // dd($stmt);
+            // dd($pervId);
+            // dd($pervId[0]['id']);
+            // dd($nextId[0]['id']);
             // dd($stmt);
             // exit();
             // $Introduction->all
@@ -149,14 +162,25 @@
                 echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'><hr>";
                 echo "<pre><div class='int-text'>{$stmt['text']}</div></pre>";
                 // 底下回上一頁
-                echo "<a href='?do=$do&p=$now#introduction-title' class='int-back'>
-                    <img class='img-fluid' src='./icon/introduction.png'>
-                    </a>";
+                echo "<div class='int-items'>
+                        <a href='?do=$do&id={$prevId[0]['id']}#introduction-title'>
+                            prev
+                        </a>
+                        <a href='?do=$do&p=$now#introduction-title' class='int-back'>
+                        <img class='img-fluid' src='./icon/introduction.png'>
+                        </a>
+                        <a href='?do=$do&id={$nextId[0]['id']}#introduction-title'>
+                            next
+                        </a>
+                    </div>
+
+                    ";
             } else {
             echo "<p>找不到此頁面。</p>";
             }
             }
             ?>
+
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 ?>
         <div class="cent">
             <?php

@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- 資料表結構 `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE  IF NOT EXISTS `admin` (
   `id` int(10) UNSIGNED NOT NULL,
   `acc` text NOT NULL,
   `pw` text NOT NULL
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
 -- 資料表結構 `bottom`
 --
 
-CREATE TABLE `bottom` (
+CREATE TABLE  IF NOT EXISTS `bottom` (
   `id` int(1) UNSIGNED NOT NULL,
   `bottom` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -67,7 +67,7 @@ INSERT INTO `bottom` (`id`, `bottom`) VALUES
 -- 資料表結構 `comics`
 --
 
-CREATE TABLE `comics` (
+CREATE TABLE  IF NOT EXISTS `comics` (
   `id` int(10) UNSIGNED NOT NULL,
   `img` text NOT NULL,
   `sh` int(1) UNSIGNED NOT NULL DEFAULT 1
@@ -89,7 +89,7 @@ INSERT INTO `comics` (`id`, `img`, `sh`) VALUES
 -- 資料表結構 `introductions`
 --
 
-CREATE TABLE `introductions` (
+CREATE TABLE  IF NOT EXISTS `introductions` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `logo` text NOT NULL COMMENT '頭像',
@@ -119,7 +119,7 @@ INSERT INTO `introductions` (`id`, `name`, `logo`, `img`, `schools`, `societies`
 -- 資料表結構 `news`
 --
 
-CREATE TABLE `news` (
+CREATE TABLE  IF NOT EXISTS `news` (
   `id` int(10) UNSIGNED NOT NULL,
   `text` text NOT NULL,
   `sh` int(1) UNSIGNED NOT NULL DEFAULT 1
@@ -149,7 +149,7 @@ INSERT INTO `news` (`id`, `text`, `sh`) VALUES
 -- 資料表結構 `titles`
 --
 
-CREATE TABLE `titles` (
+CREATE TABLE  IF NOT EXISTS `titles` (
   `id` int(10) UNSIGNED NOT NULL,
   `img` text NOT NULL,
   `text` text NOT NULL,
@@ -162,7 +162,7 @@ CREATE TABLE `titles` (
 -- 資料表結構 `total`
 --
 
-CREATE TABLE `total` (
+CREATE TABLE  IF NOT EXISTS `total` (
   `id` int(1) UNSIGNED NOT NULL,
   `total` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -171,7 +171,7 @@ CREATE TABLE `total` (
 -- 傾印資料表的資料 `total`
 --
 
-INSERT INTO `total` (`id`, `total`) VALUES
+INSERT INTO   `total` (`id`, `total`) VALUES
 (1, 543);
 
 --
