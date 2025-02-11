@@ -15,16 +15,16 @@
             </td>
             <td>
                 <select class="form-select" id="schools" name="schools">
-                    <option value="abydos">アビドス</option>
-                    <option value="arius">アリウス</option>
-                    <option value="valkyrie">ヴァルキューレ</option>
-                    <option value="gehenna">ゲヘナ</option>
-                    <option value="sengaikyo">山海経</option>
-                    <option value="toriniti">トリニティ</option>
-                    <option value="hyakkiyako">百鬼夜行</option>
-                    <option value="minenia">ミレニア</option>
-                    <option value="reddouinta">レッドウィンター</option>
-                    <option value="srt">SRT</option>
+                    <option value="abydos" data-image="./icon/abydos.png">アビドス</option>
+                    <option value="arius" data-image="./icon/arius.png">アリウス</option>
+                    <option value="valkyrie" data-image="./icon/valkyrie.png">ヴァルキューレ</option>
+                    <option value="gehenna" data-image="./icon/gehenna.png">ゲヘナ</option>
+                    <option value="sengaikyo" data-image="./icon/sengaikyo.png">山海経</option>
+                    <option value="toriniti" data-image="./icon/toriniti.png">トリニティ</option>
+                    <option value="hyakkiyako" data-image="./icon/hyakkiyako.png">百鬼夜行</option>
+                    <option value="minenia" data-image="./icon/minenia.png">ミレニア</option>
+                    <option value="reddouinta" data-image="./icon/reddouinta.png">レッドウィンター</option>
+                    <option value="srt" data-image="./icon/srt.png">SRT</option>
                 </select>
             </td>
         </tr>
@@ -37,3 +37,20 @@
         <input type="hidden" name="table" value="<?=$_GET['table'];?>">
     </div>
 </form>
+
+<script>
+$(document).ready(function() {
+    $('#schools').select2({
+        templateResult: formatOption,
+        templateSelection: formatOption
+    });
+
+    function formatOption(option) {
+        if (!option.id) {
+            return option.text;
+        }
+        var img = $(option.element).data('image');
+        return $('<span><img src="' + img + '" width="25px" height="25px"/> ' + option.text + '</span>');
+    }
+});
+</script>

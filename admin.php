@@ -25,7 +25,7 @@ if(!isset($_SESSION['login'])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="./js/js.js"></script>
     <style>
     * {
@@ -168,8 +168,12 @@ if(!isset($_SESSION['login'])){
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
+    <!-- select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
     <script>
     function login() {
         location.href = "?do=login"
@@ -195,12 +199,21 @@ if(!isset($_SESSION['login'])){
             }
         });
     });
-
-
+    
+    
     $(document).ready(function() {
+        $('#schools').select2({
+            templateResult: formatOption,
+            templateSelection: formatOption
+        });
 
-
-
+        function formatOption(option) {
+            if (!option.id) {
+                return option.text;
+            }
+            var img = $(option.element).data('image');
+            return $('<span><img src="' + img + '" width="25px" height="25px"/> ' + option.text + '</span>');
+        }
     });
     </script>
 </body>
