@@ -81,7 +81,7 @@ $(document).ready(function() {
             return option.text;
         }
         var img = $(option.element).data('image');
-        return $('<span><img src="' + img + '" width="25px" height="25px"/> ' + option.text + '</span>');
+        return $('<span><img src="' + img + '" width="20px" height="20px"/> ' + option.text + '</span>');
     }
 });
 </script>
