@@ -90,6 +90,11 @@ if(!isset($_SESSION['login'])){
             <div class="col-2 menu">
 
                 <ul>
+                <div class="items-back mt-2">
+                        <a href="?do=title" class="highlight-hover del-underline">
+                            標題圖片管理
+                        </a>
+                    </div>
                     <div class="items-back mt-2">
                         <a href="?do=news" class="highlight-hover del-underline">
                             更新消息管理
