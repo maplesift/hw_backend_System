@@ -37,6 +37,10 @@ include_once "api/db.php";
         font-weight: 400;
         font-style: normal;
     }
+
+    .key-color-bg {
+        background-color: #889DE3 !important;
+    }
     </style>
 </head>
 
@@ -169,9 +173,9 @@ include_once "api/db.php";
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script>
-    function login() {
-        location.href = "?do=main"
-    }
+    // function login() {
+    //     location.href = "?do=main"
+    // }
 
     $(".ssaa li").hover(
         function() {

@@ -6,9 +6,9 @@
         <div class="p-4 bg-yellow">
             <table width="100%">
                 <tr class="bg-yellow1">
-                    <td width="45%">帳號</td>
-                    <td width="8%" class="">密碼</td>
-                    <td width="7%" class="p-1 text-danger title">刪除</td>
+                    <td width="20%">帳號</td>
+                    <td width="10%" class="">密碼</td>
+                    <td width="15%" class="p-1 text-danger title"></td>
 
                 </tr>
 
@@ -20,15 +20,17 @@
                     ?>
                 <tr>
 
-                    <td width="23%">
+                    <td width="20%">
                         <input type="text" name="acc[]" value="<?=$row['acc'];?>" style="width:97%"
                             class="form-control">
                     </td>
-                    <td width="7%">
+                    <td width="10%">
                         <input type="password" name="pw[]" value="<?=$row['pw'];?>" class="form-control">
                     </td>
-                    <td width="7%">
-                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger ms-2">
+                    <td width="15%">
+                        <!-- <input type="button" name="del" value="<?=$row['id'];?>" class="bg-danger btn btn-danger ms-2"> -->
+                        <input type="button" class="btn btn-danger m-2" onclick="del(<?=$row['id'];?>)" value="刪除">
+
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
@@ -59,3 +61,6 @@
         </div>
     </form>
 </div>
+<script>
+
+</script>

@@ -1,7 +1,7 @@
 ﻿<?php
 include_once "api/db.php";
 if(!isset($_SESSION['login'])){
-    echo "請從登入頁登入 <a href='index.php?do=login'>管理登入</a>";
+    echo "請從登入頁登入 <a href='index.php'>管理登入</a>";
     exit();
 }
 ?>
@@ -32,6 +32,10 @@ if(!isset($_SESSION['login'])){
         font-family: "Zen Old Mincho", serif;
         font-weight: 400;
         font-style: normal;
+    }
+
+    .key-color-bg {
+        background-color: #889DE3 !important;
     }
     </style>
 </head>
@@ -175,9 +179,24 @@ if(!isset($_SESSION['login'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
     <script>
-    function login() {
-        location.href = "?do=login"
-    }
+function del(id) {
+    Swal.fire({
+        title: "確定要刪除嗎?",
+        text: "這個動作為不可逆",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "是  我要刪除!",
+        cancelButtonText: "還是算了!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            location.href=`./api/del.php?id=${id}&table=<?=$do;?>`;
+        }
+    });
+}
+
+
 
     document.addEventListener('DOMContentLoaded', () => {
         const backToTop = document.getElementById('back-to-top');
@@ -199,8 +218,8 @@ if(!isset($_SESSION['login'])){
             }
         });
     });
-    
-    
+
+
     $(document).ready(function() {
         $('#schools').select2({
             templateResult: formatOption,

@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <input type="button" class="btn btn-warning"
-                        onclick="op('#modal','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&table=<?=$do;?>')"
+                        onclick="op('#modal','#cvr','./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&table=<?=$do;?>')"
                         value="更換圖片">
                 </td>
                 <td width="7%">

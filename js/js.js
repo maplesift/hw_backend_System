@@ -1,20 +1,21 @@
 // JavaScript Document
-$(document).ready(function (e) {
-	$(".mainmu").mouseover(
-		function () {
-			// $(this)為.mainmu  .mainmu 的.mw
-			$(this).children(".mw").stop().show()
-		}
-	)
-	$(".mainmu").mouseout(
-		function () {
-			$(this).children(".mw").hide()
-		}
-	)
-});
+// $(document).ready(function (e) {
+// 	$(".mainmu").mouseover(
+// 		function () {
+// 			// $(this)為.mainmu  .mainmu 的.mw
+// 			$(this).children(".mw").stop().show()
+// 		}
+// 	)
+// 	$(".mainmu").mouseout(
+// 		function () {
+// 			$(this).children(".mw").hide()
+// 		}
+// 	)
+// });
 
 function lo(x) {
 	location.replace(x)
+	// location.href= ""
 }
 function op(x, y, url) {
 	$(x).fadeIn()

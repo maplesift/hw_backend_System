@@ -7,8 +7,8 @@
             <td><input type="file" name="img" id="img"></td>
         </tr>
         <tr>
-            <td>標題區替代文字</td>
-            <td><input type="text" name="text" id="text"></td>
+            <td>標題區背景顏色</td>
+            <td><input type="text" name="bg_color" id="bg_color"></td>
         </tr>
     </table>
     <div class="cent">
