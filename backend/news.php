@@ -8,7 +8,7 @@
                 <tr class="bg-yellow1">
                     <td width="10%" class="title">更新消息</td>
                     <td width="8%" class="text-primary title">顯示</td>
-                    <td width="7%" class="p-1 text-danger title">刪除</td>
+                    <td width="7%" class="p-1 text-danger title"></td>
 
                 </tr>
 
@@ -27,7 +27,7 @@
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                     </td>
                     <td width="7%">
-                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
+                    <input type="button" class="btn btn-danger " onclick="del(<?=$row['id'];?>)" value="刪除">
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>

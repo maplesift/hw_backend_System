@@ -20,7 +20,7 @@
                     <td width="10%" class="cent">文字介紹</td>
                     <td width="5%" class="text-primary title">顯示</td>
                     <td width="5%"></td>
-                    <td width="5%" class="p-1 text-danger title">刪除</td>
+                    <td width="5%" class="p-1 text-danger title"></td>
                 </tr>
                 <tr>
 
@@ -72,7 +72,7 @@
                             value="更換圖片">
                     </td>
                     <td width="5%">
-                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger ms-2">
+                    <input type="button" class="btn btn-danger " onclick="del(<?=$row['id'];?>)" value="刪除">
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>

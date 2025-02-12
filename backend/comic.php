@@ -11,7 +11,7 @@
                 <td width="15%" class="title">漫畫</td>
                 <td width="7%" class="text-primary title">顯示</td>
                 <td width="7%"></td>
-                <td width="7%" class=" text-danger title">刪除</td>
+                <td width="7%" class=" text-danger title"></td>
             </tr>
 
             <?php
@@ -35,7 +35,7 @@
                         value="更換圖片">
                 </td>
                 <td width="7%">
-                    <input type="checkbox" name="del[]" value="<?=$row['id'];?>" class="bg-danger">
+                <input type="button" class="btn btn-danger " onclick="del(<?=$row['id'];?>)" value="刪除">
                 </td>
                 <input type="hidden" name="id[]" value="<?=$row['id'];?>">
             </tr>
