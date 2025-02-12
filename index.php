@@ -261,6 +261,20 @@ include_once "api/db.php";
         $("#acc").val("");
         $("#pw").val("");
     }
+//     $(document).ready(function () {
+//     $("#acc, #pw").on("keydown", function (event) {
+//         if (event.key === "Enter") {
+//             event.preventDefault(); // 防止表單自動提交
+//             login();
+//         }
+//     });
+// });
+$(document).on("keydown", "#acc, #pw", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // 防止表單自動提交
+        login();
+    }
+});
     </script>
 </body>
 
