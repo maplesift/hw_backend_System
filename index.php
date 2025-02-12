@@ -39,7 +39,8 @@ include_once "api/db.php";
     }
 
     .key-color-bg {
-        background-color: #889DE3 !important;
+        background-color: #<?=$Title->find(['sh'=>1])['text'];
+        ?> !important;
     }
     </style>
 </head>
@@ -91,7 +92,7 @@ include_once "api/db.php";
         </div>
     </nav>
     <!-- header -->
-    <header id="header">
+    <header id="header" style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');">
 
     </header>
 
@@ -261,20 +262,20 @@ include_once "api/db.php";
         $("#acc").val("");
         $("#pw").val("");
     }
-//     $(document).ready(function () {
-//     $("#acc, #pw").on("keydown", function (event) {
-//         if (event.key === "Enter") {
-//             event.preventDefault(); // 防止表單自動提交
-//             login();
-//         }
-//     });
-// });
-$(document).on("keydown", "#acc, #pw", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // 防止表單自動提交
-        login();
-    }
-});
+    //     $(document).ready(function () {
+    //     $("#acc, #pw").on("keydown", function (event) {
+    //         if (event.key === "Enter") {
+    //             event.preventDefault(); // 防止表單自動提交
+    //             login();
+    //         }
+    //     });
+    // });
+    $(document).on("keydown", "#acc, #pw", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // 防止表單自動提交
+            login();
+        }
+    });
     </script>
 </body>
 

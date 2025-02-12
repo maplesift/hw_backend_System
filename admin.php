@@ -35,7 +35,8 @@ if(!isset($_SESSION['login'])){
     }
 
     .key-color-bg {
-        background-color: #889DE3 !important;
+        background-color: #<?=$Title->find(['sh'=>1])['text'];
+        ?> !important;
     }
     </style>
 </head>
@@ -68,7 +69,7 @@ if(!isset($_SESSION['login'])){
         </div>
     </nav>
     <!-- header -->
-    <header id="header">
+    <header id="header" style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');">
 
     </header>
     <div id="modal" style="display:none">
@@ -90,7 +91,7 @@ if(!isset($_SESSION['login'])){
             <div class="col-2 menu">
 
                 <ul>
-                <div class="items-back mt-2">
+                    <div class="items-back mt-2">
                         <a href="?do=title" class="highlight-hover del-underline">
                             標題圖片管理
                         </a>
@@ -130,13 +131,13 @@ if(!isset($_SESSION['login'])){
 
             <!-- include -->
             <?php
-            $do=$_GET['do']??'admin';
+            $do=$_GET['do']??'title';
             $file="./backend/{$do}.php";
             
             if(file_exists($file)){
                 include $file;
             }else{
-                include "./backend/admin.php";
+                include "./backend/title.php";
             }
             ?>
 
@@ -184,22 +185,22 @@ if(!isset($_SESSION['login'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
     <script>
-function del(id) {
-    Swal.fire({
-        title: "確定要刪除嗎?",
-        text: "這個動作為不可逆",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
-        cancelButtonColor: "#3085d6",
-        confirmButtonText: "是  我要刪除!",
-        cancelButtonText: "還是算了!"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            location.href=`./api/del.php?id=${id}&table=<?=$do;?>`;
-        }
-    });
-}
+    function del(id) {
+        Swal.fire({
+            title: "確定要刪除嗎?",
+            text: "這個動作為不可逆",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "是  我要刪除!",
+            cancelButtonText: "還是算了!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = `./api/del.php?id=${id}&table=<?=$do;?>`;
+            }
+        });
+    }
 
 
 

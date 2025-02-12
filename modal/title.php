@@ -8,7 +8,7 @@
         </tr>
         <tr>
             <td>標題區背景顏色</td>
-            <td><input type="text" name="bg_color" id="bg_color"></td>
+            <td><input type="text" name="text" id="text"></td>
         </tr>
     </table>
     <div class="cent">

@@ -2,8 +2,8 @@
 <div class="col-6 ">
     <h2 class="title">進站總人數管理</h2>
     <hr>
-    <div class="p-4 ">
-        <form method="post" action="./api/update_data.php">
+    <form method="post" action="./api/update_data.php">
+        <div class="p-4 ">
             <table width="100%">
                 <tr class="bg-yellow1">
                     <td class="text-r">頁尾版權:</td>
@@ -24,6 +24,6 @@
                     </td>
                 </tr>
             </table>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
