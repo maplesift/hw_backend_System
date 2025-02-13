@@ -29,7 +29,7 @@
                     </td>
                     <td width="15%">
                         <!-- <input type="button" name="del" value="<?=$row['id'];?>" class="bg-danger btn btn-danger ms-2"> -->
-                        <input type="button" class="btn btn-danger m-2" onclick="del(<?=$row['id'];?>)" value="刪除">
+                        <input type="button" class="btn btn-danger m-2" onclick="del(<?=$row['id'];?>,<?=$do;?>)" value="刪除">
 
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">

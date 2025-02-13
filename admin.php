@@ -185,61 +185,22 @@ if(!isset($_SESSION['login'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
     <script>
-    function del(id) {
-        Swal.fire({
-            title: "確定要刪除嗎?",
-            text: "這個動作為不可逆",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "是  我要刪除!",
-            cancelButtonText: "還是算了!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                location.href = `./api/del.php?id=${id}&table=<?=$do;?>`;
-            }
-        });
-    }
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const backToTop = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement
-                .clientHeight;
-            const scrollPercent = (scrollTop / windowHeight) * 100;
-
-            if (scrollPercent > 10) {
-                backToTop.style.opacity = '1'; // 設為完全不透明
-                backToTop.style.visibility = 'visible'; // 顯示按鈕
-                backToTop.style.transform = 'translateY(0)'; // 回到原始位置
-            } else {
-                backToTop.style.opacity = '0'; // 設為完全透明
-                backToTop.style.visibility = 'hidden'; // 隱藏按鈕
-                backToTop.style.transform = 'translateY(50px)'; // 下移回初始位置
-            }
-        });
-    });
-
-
-    $(document).ready(function() {
-        $('#schools').select2({
-            templateResult: formatOption,
-            templateSelection: formatOption
-        });
-
-        function formatOption(option) {
-            if (!option.id) {
-                return option.text;
-            }
-            var img = $(option.element).data('image');
-            return $('<span><img src="' + img + '" width="25px" height="25px"/> ' + option.text + '</span>');
-        }
-    });
+function del(id,table) {
+	Swal.fire({
+		title: "確定要刪除嗎?",
+		text: "這個動作為不可逆",
+		icon: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#d33",
+		cancelButtonColor: "#3085d6",
+		confirmButtonText: "是  我要刪除!",
+		cancelButtonText: "還是算了!"
+	}).then((result) => {
+		if (result.isConfirmed) {
+			location.href = `./api/del.php?id=${id}&table=${table}`;
+		}
+	});
+}
     </script>
 </body>
 

@@ -27,7 +27,7 @@
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                     </td>
                     <td width="7%">
-                    <input type="button" class="btn btn-danger " onclick="del(<?=$row['id'];?>)" value="刪除">
+                    <input type="button" class="btn btn-danger " onclick="del(<?=$row['id'];?>,<?=$do;?>)" value="刪除">
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
