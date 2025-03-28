@@ -37,7 +37,7 @@ if(!isset($_SESSION['user'])){
 
     .key-color-bg {
         background-color: #<?=$Title->find(['sh'=>1])['text'];
-        ?> !important;
+        ?> 
     }
     </style>
 </head>
