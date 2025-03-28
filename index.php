@@ -9,9 +9,9 @@ include_once "api/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Archive TW</title>
     <!-- link css 順序 1.bs 2.self -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
-        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bs5 icon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@ include_once "api/db.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
 
-
+<!-- jq -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
-    <!-- <script src="./js/jquery-1.9.1.min.js"></script> -->
+
 
     <script src="./js/js.js"></script>
 
@@ -40,7 +40,7 @@ include_once "api/db.php";
 
     .key-color-bg {
         background-color: #<?=$Title->find(['sh'=>1])['text'];
-        ?> !important;
+        ?> 
     }
     </style>
 </head>
@@ -78,7 +78,7 @@ include_once "api/db.php";
                 </ul>
                 <!-- <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button> -->
                 <?php
-                if(!isset($_SESSION['login'])){
+                if(!isset($_SESSION['user'])){
                 ?>
                 <button onclick="op('#modal','#cvr','./modal/login.php')" class="btn-login key-color-bg">登入</button>
                 <?php
@@ -92,7 +92,9 @@ include_once "api/db.php";
         </div>
     </nav>
     <!-- header -->
-    <header id="header" style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');">
+    <header id="header" 
+    style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');" 
+    onclick="location.href='index.php'">
 
     </header>
 
@@ -101,7 +103,7 @@ include_once "api/db.php";
 
         <div class="row">
 
-            <div class="col-1 bg-yellow1 "></div>
+            <div class="col-1 "></div>
             <!-- menu -->
             <div class="col-3 menu">
 
@@ -174,7 +176,17 @@ include_once "api/db.php";
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script>
-
+$(".ssaa li").hover(
+	function () {
+		$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+		$("#altt").show()
+	}
+)
+$(".ssaa li").mouseout(
+	function () {
+		$("#altt").hide()
+	}
+)
     </script>
 </body>
 

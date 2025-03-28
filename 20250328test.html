@@ -1,0 +1,90 @@
+
+<div class="toggle-switch">
+  <button id="toggleButton" class="slider" data-active="false">
+    <span class="option active">登入</span>
+    <span class="option">註冊</span>
+  </button>
+</div>
+
+
+<style>
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.4s;
+}
+
+/* 滑塊背景 */
+.slider .option {
+  font-size: 14px;
+  color: #aaa;
+  transition: color 0.4s;
+}
+
+.slider .option.active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* 滑塊 */
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s;
+}
+
+/* 切換狀態 */
+.slider[data-active="true"] {
+  background-color: #ccc;
+}
+
+.slider[data-active="true"]:before {
+  transform: translateX(60px);
+}
+
+.slider[data-active="true"] .option:first-child {
+  color: #aaa;
+}
+
+.slider[data-active="true"] .option:last-child {
+  color: #000;
+  font-weight: bold;
+}
+</style>
+
+
+
+<script>
+
+    const toggleButton = document.getElementById("toggleButton");
+
+toggleButton.addEventListener("click", () => {
+    const isActive = toggleButton.getAttribute("data-active") === "true";
+    toggleButton.setAttribute("data-active", !isActive);
+});
+</script>

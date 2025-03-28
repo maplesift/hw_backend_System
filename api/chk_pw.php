@@ -4,8 +4,8 @@
 // echo $User->count(['acc'=>$acc]);
 $chk=$Admin->count($_POST);
 if($chk){
+    $_SESSION['user'] = $_POST['acc'];
     echo $chk;
-    $_SESSION['login'] = 1;
 }else{
     echo 0;
 }

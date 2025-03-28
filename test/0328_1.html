@@ -1,0 +1,185 @@
+<style>
+    .container {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .toggle-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .toggle-switch {
+        position: relative;
+        width: 160px;
+        height: 48px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #007bff, #0056b3);
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .slider .option {
+        flex: 1;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+
+    .slider .option.active {
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .slider::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        top: 0;
+        left: 0;
+        border-radius: 24px;
+        transition: transform 0.3s ease;
+        backdrop-filter: blur(2px);
+    }
+
+    .slider[data-active="true"]::before {
+        transform: translateX(100%);
+    }
+
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-content {
+        display: none;
+        transition: all 0.3s ease;
+    }
+
+    .form-content.active {
+        display: block;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .form-group label {
+        display: inline-block;
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    .form-group input {
+        width: calc(100% - 90px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+        border-color: #007bff;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="toggle-container">
+        <div class="toggle-switch">
+            <button id="toggleButton" class="slider" data-active="false">
+                <span class="option login active">登入</span>
+                <span class="option register">註冊</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 表單容器 -->
+    <div class="form-container">
+        <div id="loginForm" class="form-content active">
+            <div class="form-group">
+                <label>帳號：</label>
+                <input type="text" id="acc">
+            </div>
+            <div class="form-group">
+                <label>密碼：</label>
+                <input type="password" id="pw">
+            </div>
+        </div>
+        <div id="registerForm" class="form-content">
+            <div class="form-group">
+                <label>帳號：</label>
+                <input type="text" id="reg_acc">
+            </div>
+            <div class="form-group">
+                <label>密碼：</label>
+                <input type="password" id="reg_pw">
+            </div>
+            <div class="form-group">
+                <label>確認密碼：</label>
+                <input type="password" id="reg_pw2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const loginOption = toggleButton.querySelector('.login');
+    const registerOption = toggleButton.querySelector('.register');
+
+    toggleButton.addEventListener('click', () => {
+        const isActive = toggleButton.getAttribute('data-active') === 'true';
+        const newState = !isActive;
+
+        // 更新按鈕狀態
+        toggleButton.setAttribute('data-active', newState);
+
+        // 切換選項的 active 類
+        if (newState) {
+            loginOption.classList.remove('active');
+            registerOption.classList.add('active');
+            loginForm.classList.remove('active');
+            registerForm.classList.add('active');
+        } else {
+            loginOption.classList.add('active');
+            registerOption.classList.remove('active');
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
+        }
+    });
+
+    // 初始化狀態
+    loginForm.classList.add('active');
+</script>

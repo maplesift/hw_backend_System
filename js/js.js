@@ -46,11 +46,12 @@ function login() {
 			})
 		}
 	})
-
 }
-function resetForm() {
-	$("#acc").val("");
-	$("#pw").val("");
+
+
+function resetForm(){
+    //針對特定類型的input標籤進行資料清空的動作
+    $("input[type='text'],input[type='password'],input[type='number'],input[type='radio']").val("");
 }
 
 //  ============= back to top
@@ -76,32 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ====================select2 (圖示)
-$(document).ready(function () {
-	$('#schools').select2({
-		templateResult: formatOption,
-		templateSelection: formatOption
-	});
 
-	function formatOption(option) {
-		if (!option.id) {
-			return option.text;
-		}
-		var img = $(option.element).data('image');
-		return $('<span><img src="' + img + '" width="25px" height="25px"/> ' + option.text + '</span>');
-	}
-});
 
-$(".ssaa li").hover(
-	function () {
-		$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
-		$("#altt").show()
-	}
-)
-$(".ssaa li").mouseout(
-	function () {
-		$("#altt").hide()
-	}
-)
+
 
 function login() {
 	let user = {
@@ -148,10 +126,59 @@ function login() {
 	})
 }
 
-function resetForm() {
-	$("#acc").val("");
-	$("#pw").val("");
+function reg(){
+	let user={
+		acc:$("#reg_acc").val(),
+		pw:$("#reg_pw").val(),
+		pw2:$("#reg_pw2").val(),
+
+	}
+	if(user.acc=='' || user.pw=='' || user.pw2==''){
+		Swal.fire({
+			icon: 'error',
+			title: '註冊失敗',
+			text: '欄位不可空白',
+			confirmButtonText: '確定'
+		});
+		resetForm()
+	}else if(user.pw !=user.pw2){
+		Swal.fire({
+			icon: 'error',
+			title: '註冊失敗',
+			text: '密碼不一致',
+			confirmButtonText: '確定'
+		});
+		resetForm()
+	}else{
+		$.get('./api/chk_acc.php',{acc:user.acc},function(res){
+			if(res>0){
+				console.log(res);
+				
+				Swal.fire({
+					icon: 'error',
+					title: '註冊失敗',
+					text: '帳號重複',
+					confirmButtonText: '確定'
+				});
+				resetForm()
+			}else{
+				$.post('./api/reg.php',user,function(res){
+					if(res>0){
+						Swal.fire({
+							icon: 'success',
+							title: '註冊成功',
+							text: '將回到首頁',
+							confirmButtonText: '確定'
+						}).then(() => {
+							location.href = 'index.php';
+						});
+					}
+				})
+			}
+		})
+	}
 }
+
 
 $(document).on("keydown", "#acc, #pw", function (event) {
 	if (event.key === "Enter") {
@@ -159,3 +186,24 @@ $(document).on("keydown", "#acc, #pw", function (event) {
 		login();
 	}
 });
+
+// login
+function showLogin() {
+	// 顯示登入表單，隱藏註冊表單
+	document.getElementById('loginForm').style.display = 'block';
+	document.getElementById('registerForm').style.display = 'none';
+	
+	// 切換按鈕樣式
+	document.querySelector('button[onclick="showLogin()"]').className = 'box btn btn-primary active';
+	document.querySelector('button[onclick="showRegister()"]').className = 'box btn btn-outline-primary';
+}
+
+function showRegister() {
+	// 顯示註冊表單，隱藏登入表單
+	document.getElementById('loginForm').style.display = 'none';
+	document.getElementById('registerForm').style.display = 'block';
+	
+	// 切換按鈕樣式
+	document.querySelector('button[onclick="showLogin()"]').className = 'box btn btn-outline-primary';
+	document.querySelector('button[onclick="showRegister()"]').className = 'box btn btn-primary active';
+}

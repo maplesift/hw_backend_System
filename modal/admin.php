@@ -1,5 +1,5 @@
 <!-- from backend/$do.php -->
-<h3 class="cent title">新增管理者帳號</h3>
+<h3 class="cent title">新增帳號</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
     <table>

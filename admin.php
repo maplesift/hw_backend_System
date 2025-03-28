@@ -1,6 +1,6 @@
 ﻿<?php
 include_once "api/db.php";
-if(!isset($_SESSION['login'])){
+if(!isset($_SESSION['user'])){
     echo "請從登入頁登入 <a href='index.php'>管理登入</a>";
     exit();
 }
@@ -27,6 +27,7 @@ if(!isset($_SESSION['login'])){
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="./js/js.js"></script>
+    <script src="./js/select2.js"></script>
     <style>
     * {
         font-family: "Zen Old Mincho", serif;
@@ -68,9 +69,9 @@ if(!isset($_SESSION['login'])){
             </div>
         </div>
     </nav>
-    <!-- header -->
-    <header id="header" style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');">
-
+    <header id="header" 
+    style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');" 
+    onclick="location.href='index.php'">
     </header>
     <div id="modal" style="display:none">
         <div id="coverr">
@@ -86,7 +87,7 @@ if(!isset($_SESSION['login'])){
 
         <div class="row">
 
-            <div class="col-1 bg-yellow1 "></div>
+            <div class="col-1  "></div>
             <!-- menu -->
             <div class="col-2 menu">
 

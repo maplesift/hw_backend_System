@@ -1,8 +1,8 @@
 <?php include_once "db.php";
 // $acc=$_GET['acc'];
-
-// echo $User->count(['acc'=>$acc]);
-echo $Admin->count($_GET);
+// echo $_GET;
+echo $Admin->count(['acc'=>$_GET['acc']]);
+// echo $Admin->count($_GET);
 
 
 
