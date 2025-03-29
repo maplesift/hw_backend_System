@@ -1,30 +1,30 @@
-<style></style>
+<style>
+.f-comic{
+    width:880px;height:1584px;
+}
+</style>
 
 <div class="col-8 inner">
     <h2 class="title title-border" id="comic-title">官方漫畫</h2>
     <div class="p-4 ">
         <?php
-
-                // 分頁
                 $div=1;
                 $total=$Comic->count();
                 $pages=ceil($total/$div);
                 $now=$_GET['p']??1;
                 $start=($now-1)*$div;
 
-                // 空格很重要
                 $rows=$Comic->all(['sh'=>1]," limit $start,$div");
-        // $rows=$Comic->all(['sh'=>1], "limit 2");
-        // *********
+
         ?>
+        <!-- 分頁 -->
         <div class="cent">
             <?php
                 if(($now-1)>0) {
                     $prev=$now-1;
                     echo "<a href='?do=$do&p=$prev#comic-title'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
-                    
-                }
 
+                }
                 for($i=1;$i<=$pages;$i++){
                     $size=($i==$now)?"29px":"22px";
                     echo "<a href='?do=$do&p=$i#comic-title' style='font-size:$size'>";
@@ -42,10 +42,11 @@
         <?php foreach($rows as $row):
         ?>
         <div class="title-border">
-            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2 " style="width:880px;height:1584px;">
+            <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2 f-comic" style="">
 
         </div>
         <?php endforeach ;?>
+        <!-- 分頁 -->
         <div class="cent">
             <?php
                 if(($now-1)>0) {

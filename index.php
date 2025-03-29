@@ -9,7 +9,7 @@ include_once "api/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Archive TW</title>
     <!-- link css 順序 1.bs 2.self -->
-     <!-- bs5 -->
+    <!-- bs5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- bs5 icon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -22,7 +22,7 @@ include_once "api/db.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
 
-<!-- jq -->
+    <!-- jq -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -32,16 +32,16 @@ include_once "api/db.php";
     <script src="./js/js.js"></script>
 
     <style>
-    * {
-        font-family: "Zen Old Mincho", serif;
-        font-weight: 400;
-        font-style: normal;
-    }
+        * {
+            font-family: "Zen Old Mincho", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
 
-    .key-color-bg {
-        background-color: #<?=$Title->find(['sh'=>1])['text'];
-        ?> 
-    }
+        .key-color-bg {
+            background-color: #<?= $Title->find(['sh' => 1])['text'];
+                                ?>
+        }
     </style>
 </head>
 
@@ -78,35 +78,32 @@ include_once "api/db.php";
                 </ul>
                 <!-- <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button> -->
                 <?php
-                if(!isset($_SESSION['user'])){
+                if (!isset($_SESSION['user'])) {
                 ?>
-                <button onclick="op('#modal','#cvr','./modal/login.php')" class="btn-login key-color-bg">登入</button>
+                    <button onclick="op('#modal','#cvr','./modal/login.php')" class="btn-login key-color-bg">登入</button>
                 <?php
-                    }else{
+                } else {
                 ?>
-                <button onclick="lo('admin.php')" class="btn-login key-color-bg">管理頁面</button>
+                    <button onclick="lo('admin.php')" class="btn-login key-color-bg">管理頁面</button>
                 <?php
-                    }
+                }
                 ?>
             </div>
         </div>
     </nav>
     <!-- header -->
-    <header id="header" 
-    style="background-image: url('./upload/<?=$Title->find(['sh'=>1])['img'];?>');" 
-    onclick="location.href='index.php'">
+    <header id="header"
+        style="background-image: url('./upload/<?= $Title->find(['sh' => 1])['img']; ?>');"
+        onclick="location.href='index.php'">
 
     </header>
 
     <!-- container1 -->
     <div class="container-fluid " id="container">
-
         <div class="row">
-
             <div class="col-1 "></div>
             <!-- menu -->
             <div class="col-3 menu">
-
                 <ul>
                     <div class="items mt-4">
                         <a href="?do=news">
@@ -122,28 +119,21 @@ include_once "api/db.php";
                         <a href="?do=introduction">
                             <img class="img-fluid" src="./icon/introduction.png" alt="">
                         </a>
-
                     </div>
                 </ul>
             </div>
-
             <!-- include -->
             <?php
-            $do=$_GET['do']??'main';
-            $file="./front/{$do}.php";
-            
-            if(file_exists($file)){
+            $do = $_GET['do'] ?? 'main';
+            $file = "./front/{$do}.php";
+
+            if (file_exists($file)) {
                 include $file;
-            }
-            else{
+            } else {
                 include "./front/main.php";
             }
-                ?>
-
+            ?>
             <!-- include end -->
-            <!-- <div class="col-1">
-
-            </div> -->
         </div>
     </div>
 
@@ -154,13 +144,13 @@ include_once "api/db.php";
                 References
             </a>
             <a href="">
-                進站總人數 :<?=$Total->find(1)['total'];?>
+                進站總人數 :<?= $Total->find(1)['total']; ?>
             </a>
         </div>
         <div class="footer-content">
             <img src="https://dszw1qtcnsa5e.cloudfront.net/bin/live/console-community-view/assets/forum-web/pc/footer-logo.png"
                 alt="" class="logo-nexon">
-            <span class="copyright"><?=$Bottom->find(1)['bottom'];?></span>
+            <span class="copyright"><?= $Bottom->find(1)['bottom']; ?></span>
         </div>
 
     </footer>
@@ -176,17 +166,17 @@ include_once "api/db.php";
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script>
-$(".ssaa li").hover(
-	function () {
-		$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
-		$("#altt").show()
-	}
-)
-$(".ssaa li").mouseout(
-	function () {
-		$("#altt").hide()
-	}
-)
+        $(".ssaa li").hover(
+            function() {
+                $("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+                $("#altt").show()
+            }
+        )
+        $(".ssaa li").mouseout(
+            function() {
+                $("#altt").hide()
+            }
+        )
     </script>
 </body>
 

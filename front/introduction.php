@@ -4,7 +4,6 @@
     height: 960px;
 }
 
-.int-logo:hover {}
 
 .int-a {
     color: black;
@@ -39,7 +38,6 @@
 
 }
 
-#introduction-title:hover {}
 
 
 .box {
