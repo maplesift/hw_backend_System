@@ -54,12 +54,17 @@
             flex-direction: column;
             justify-content: space-evenly;
         }
-        @media (max-width: 768px) { /* 手機版 */
-    th.int-th:nth-child(4),  /* 隱藏「部活」標題 */
-    td.int-societies {       /* 隱藏「部活」內容 */
-        display: none;
-    }
-}
+
+        @media (max-width: 768px) {
+
+            /* 手機版 */
+            th.int-th:nth-child(4),
+            /* 隱藏「部活」標題 */
+            td.int-societies {
+                /* 隱藏「部活」內容 */
+                display: none;
+            }
+        }
     </style>
 
     <?php
@@ -89,7 +94,7 @@
             <div class="p-4 int">
                 <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 
                 ?>
-                <!-- 分頁 -->
+                    <!-- 分頁 -->
                     <div class="cent">
                         <?php
                         if (($now - 1) > 0) {
@@ -186,13 +191,13 @@
                     style='width:150px;height:150px;'>
                 </div>
                 </div>
-    <div class='box'>
-        <div style='font-size: 26px; font-weight:bold; padding-bottom: 10px;' class=' '>部活
-        </div>
-        <div class='cent'style='font-size:26px;'>
-            {$stmt['societies']}
-        </div>
-    </div>
+                <div class='box'>
+                    <div style='font-size: 26px; font-weight:bold; padding-bottom: 10px;' class=' '>部活
+                    </div>
+                    <div class='cent'style='font-size:26px;'>
+                        {$stmt['societies']}
+                    </div>
+                </div>
     <div class='box'>
 
     </div>
@@ -235,12 +240,11 @@
                 echo "<p>找不到此頁面。</p>";
             }
         }
-
         ?>
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 
         ?>
-        <!-- 分頁 -->
+            <!-- 分頁 -->
             <div class="cent">
                 <?php
                 if (($now - 1) > 0) {

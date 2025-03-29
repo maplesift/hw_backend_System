@@ -233,7 +233,7 @@ button:focus {
 	border-bottom: 1px solid rgb(161, 156, 156);
 	padding-bottom: 15px;
 }
-h2.title-border{
+h2.title-border,div.title-border{
 	padding: 0px 0px 10px 5px;
 }
 
@@ -616,6 +616,10 @@ h2.title-border{
 		/* 圖片佔滿項目寬度 */
 		height: auto;
 		/* 保持圖片比例 */
+	}
+	#introduction-title {
+
+		font-size: 24px;
 	}
 }
 
