@@ -155,9 +155,11 @@
                 </table>
             </div>
         <?php endif; ?>
+        <!-- 單獨學生介紹 -->
+
         <?php
         // 讀取選取的頁面內容
-        if (isset($_GET['id'])) {
+        if (isset($_GET['id'])) :
             $id = $_GET['id'];
             // $i=$_GET['p'];
             // $sql = "SELECT * FROM introductions WHERE id = :id";
@@ -175,72 +177,64 @@
             // $Introduction->all
             // $stmt->execute([':id' => $id]);
             // $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($stmt) {
-                // 動態生成title
-                echo "<h2 class='title title-border'><a href='?do=$do&p=$now#introduction-title' class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> {$stmt['name']} </h2>";
-                // 動態生成 img
-                echo "<div class='d-flex'>";
-                echo "<img src='./upload/{$stmt['img']}' class='img-fluid mt-4 int-img'>";
-                echo "<div class='test'>
-                <div class='box'>
-                <div style='font-size: 25px; font-weight:bold;' class=''>学園
-                </div>
-                <div>
-                <img src='./icon/{$stmt['schools']}.png' class='img-fluid  '
-                    style='width:150px;height:150px;'>
-                </div>
-                </div>
-                <div class='box'>
-                    <div style='font-size: 26px; font-weight:bold; padding-bottom: 10px;' class=' '>部活
-                    </div>
-                    <div class='cent'style='font-size:26px;'>
-                        {$stmt['societies']}
-                    </div>
-                </div>
-    <div class='box'>
-
-    </div>
-    </div>";
-                echo "</div>";
-
-                echo "
-    <pre><div class='int-text title-border mt-4'>{$stmt['text']}</div>
-                </pre>";
-
-                // footer 回上一頁 ,左右可選跳至上下學生(id)
-                echo "<div class='int-items'>";
-                echo "<div>";
-                if (isset($prevId['id'])) {
-
-                    echo "<a href='?do=$do&id={$prevId['id']}#introduction-title'>
-                <img src='./upload/{$prevId['logo']}' class='img-fluid mt-4 int-logo int-radius'
-                    style='width:120px;height:120px;'>
-            </a>";
-                }
-                echo "</div>";
-
-                echo "<div style='display:flex;align-items: center;'>
-            <a href='?do=$do&p=$now#introduction-title' class='int-back'>
-                <img class='img-fluid' src='./icon/introduction.png'>
-            </a>
-        </div>";
-                echo "<div>";
-                if (isset($nextId['id'])) {
-                    echo "<a href='?do=$do&id={$nextId['id']}#introduction-title'>
-                <img src='./upload/{$nextId['logo']}' class='img-fluid mt-4 int-logo int-radius'
-                    style='width:120px;height:120px;'>
-            </a>";
-                }
-
-                echo "</div>
-            </div>";
-                // footer end
-            } else {
-                echo "<p>找不到此頁面。</p>";
-            }
-        }
         ?>
+    <?php if($stmt):?>
+        <h2 class="title title-border"><a href="?do=<?= $do ?>&p=<?= $now ?>#introduction-title" class='int-a ' id='introduction-title'>學生介紹</a> <i class='bi bi-caret-right'></i> <?= $stmt['name']; ?> </h2>
+        <div class="d-flex">
+            <img src="./upload/<?= $stmt['img']; ?>" class="img-fluid mt-4 int-img">
+            <div class='test'>
+                <div class='box'>
+                    <div style='font-size: 25px; font-weight:bold;' class=''>学園
+               </div>
+               <div>
+                   <img src="./icon/<?= $stmt['schools'] ?>.png" class="img-fluid  "
+                       style='width:150px;height:150px;'>
+               </div>
+           </div>
+           <div class='box'>
+               <div style='font-size: 26px; font-weight:bold; padding-bottom: 10px;' class=' '>部活
+               </div>
+               <div class='cent' style='font-size:26px;'>
+                   <?= $stmt['societies']; ?>
+               </div>
+           </div>
+           <div class='box'>
+
+           </div>
+       </div>
+   </div>
+   <pre>
+    <div class='int-text title-border mt-4'><?= $stmt['text']; ?></div>
+   </pre>
+    <!-- footer 回上一頁 ,左右可選跳至上下學生(id) -->
+   <div class='int-items'>
+       <div>
+      <?php if (isset($prevId['id'])):?>
+           <a href="?do=$do&id=<?= $prevId['id']; ?>#introduction-title">
+               <img src="./upload/<?= $prevId['logo'] ?>" class='img-fluid mt-4 int-logo int-radius'
+                style='width:120px;height:120px;'>
+           </a>
+           <?php endif; ?>
+       </div>
+       <div style='display:flex;align-items: center;'>
+           <a href="?do=<?= $do ?>&p=<?= $now ?>#introduction-title" class='int-back'>
+               <img class='img-fluid' src='./icon/introduction.png'>
+           </a>
+       </div>
+       <div>
+       <?php if (isset($nextId['id'])):?>
+        <a href="?do=<?=$do?>&id=<?=$nextId['id'];?>#introduction-title">
+            <img src="./upload/<?=$nextId['logo'];?>" class='img-fluid mt-4 int-logo int-radius'
+            style='width:120px;height:120px;'>
+        </a>
+        <?php endif; ?>
+       </div>
+   </div>
+   <!--   footer end -->
+    <?php else:
+        echo "<p>找不到此頁面。</p>";
+    
+    ?>
 
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 
         ?>
@@ -266,7 +260,8 @@
                 ?>
             </div>
         <?php endif; ?>
-
+        <?php endif; ?>       
+         <?php endif; ?>
         <!--event-banner-box  -->
         <div class="event-banner-box">
             <div class="inner">
