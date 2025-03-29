@@ -194,8 +194,8 @@ function showLogin() {
 	document.getElementById('registerForm').style.display = 'none';
 	
 	// 切換按鈕樣式
-	document.querySelector('button[onclick="showLogin()"]').className = 'box btn btn-primary active';
-	document.querySelector('button[onclick="showRegister()"]').className = 'box btn btn-outline-primary';
+	document.querySelector('button[onclick="showLogin()"]').className = 'login_btn btn btn-primary active';
+	document.querySelector('button[onclick="showRegister()"]').className = 'login_btn btn btn-outline-primary';
 }
 
 function showRegister() {
@@ -204,6 +204,6 @@ function showRegister() {
 	document.getElementById('registerForm').style.display = 'block';
 	
 	// 切換按鈕樣式
-	document.querySelector('button[onclick="showLogin()"]').className = 'box btn btn-outline-primary';
-	document.querySelector('button[onclick="showRegister()"]').className = 'box btn btn-primary active';
+	document.querySelector('button[onclick="showLogin()"]').className = 'login_btn btn btn-outline-primary';
+	document.querySelector('button[onclick="showRegister()"]').className = 'login_btn btn btn-primary active';
 }

@@ -6,8 +6,8 @@ if(isset($_SESSION['login'])){
 ?>
 <div class="col-6 w-100 mx-auto">
     <div class="cent d-flex justify-content-center gap-3 mb-4">
-        <button class="box btn btn-primary active" onclick="showLogin()">登入</button>
-        <button class="box btn btn-outline-primary" onclick="showRegister()">註冊</button>
+        <button class="login_btn btn btn-primary active" onclick="showLogin()">登入</button>
+        <button class="login_btn btn btn-outline-primary" onclick="showRegister()">註冊</button>
     </div>
     <hr>
     <div class="p-4">
@@ -46,7 +46,7 @@ if(isset($_SESSION['login'])){
     .form-container {
         transition: all 0.3s ease;
     }
-    .box{
+    .login_btn{
         width: 72px;
         height: 47px;
     }
