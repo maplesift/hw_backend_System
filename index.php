@@ -39,9 +39,9 @@ include_once "api/db.php";
         }
 
         .key-color-bg {
-            background-color: #<?= $Title->find(['sh' => 1])['text'];
-                                ?>
+            background-color: #<?= $Title->find(['sh' => 1])['text']; ?>
         }
+
     </style>
 </head>
 
@@ -57,40 +57,29 @@ include_once "api/db.php";
         </div>
     </div>
     <!-- navbar -->
-
-    <nav class="navbar navbar-expand-sm navbar-dark key-color-bg ">
+    <nav class="navbar navbar-expand-sm navbar-dark key-color-bg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="./icon/00SD.gif" class="img-fluid logo" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item text-light">
-                        Blue Archive TW
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)"></a>
-                    </li>
-                </ul>
-                <!-- <button class="btn-login key-color-bg" type="button" onclick="login()">登入</button> -->
-                <?php
-                if (!isset($_SESSION['user'])) {
-                ?>
-                    <button onclick="op('#modal','#cvr','./modal/login.php')" class="btn-login key-color-bg">登入</button>
-                <?php
-                } else {
-                ?>
-                    <button onclick="lo('admin.php')" class="btn-login key-color-bg">管理頁面</button>
-                <?php
-                }
-                ?>
-            </div>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item text-light">
+                    Blue Archive TW
+                </li>
+            </ul>
+            <?php
+            if (!isset($_SESSION['user'])) {
+            ?>
+                <button onclick="op('#modal','#cvr','./modal/login.php')" class="btn-login key-color-bg">登入</button>
+            <?php
+            } else {
+            ?>
+                <button onclick="lo('admin.php')" class="btn-login key-color-bg">管理頁面</button>
+            <?php
+            }
+            ?>
         </div>
     </nav>
+
+
     <!-- header -->
     <header id="header"
         style="background-image: url('./upload/<?= $Title->find(['sh' => 1])['img']; ?>');"
@@ -104,22 +93,22 @@ include_once "api/db.php";
             <div class="col-1 "></div>
             <!-- menu -->
             <div class="col-3 menu">
-                <ul>
-                    <div class="items mt-4">
+                <ul class="menu-items">
+                    <li class="items mt-4">
                         <a href="?do=news">
                             <img class="img-fluid" src="./icon/01410x100.png" alt="">
                         </a>
-                    </div>
-                    <div class="items mt-4">
+                    </li>
+                    <li class="items mt-4">
                         <a href="?do=comic">
                             <img class="img-fluid" src="./icon/02410x100.png" alt="">
                         </a>
-                    </div>
-                    <div class="items mt-4">
+                    </li>
+                    <li class="items mt-4">
                         <a href="?do=introduction">
                             <img class="img-fluid" src="./icon/introduction.png" alt="">
                         </a>
-                    </div>
+                    </li>
                 </ul>
             </div>
             <!-- include -->

@@ -1,4 +1,4 @@
-<div class="col-8 inner">
+<div class="col-12 inner col-sm-8">
     <h2 class="title-border  title">更新消息</h2>
     <!-- <hr> -->
     <div class="p-4 ">
@@ -28,7 +28,7 @@
             ?>
         </ul>
         <!-- 為黃字框 -->
-        <div id="altt" style="">
+        <div id="altt" >
         </div>
         <div class="cent">
             <?php

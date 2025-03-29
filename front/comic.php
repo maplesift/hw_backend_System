@@ -1,10 +1,17 @@
 <style>
 .f-comic{
-    width:880px;height:1584px;
+    width: 880px;
+    height:1584px;
+}
+@media (max-width: 500px) {
+    .f-comic{
+       max-height:712px;
+       /* max-width: 410px; */
+    }
 }
 </style>
 
-<div class="col-8 inner">
+<div class="col-12 inner col-sm-8">
     <h2 class="title title-border" id="comic-title">官方漫畫</h2>
     <div class="p-4 ">
         <?php

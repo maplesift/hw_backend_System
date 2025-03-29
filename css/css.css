@@ -81,35 +81,7 @@ body {
 	border-bottom: #333 1px solid;
 }
 
-.mainmu {
-	position: relative;
-	border-radius: 10px;
-	background: url(../icon/menu.fw.png) center no-repeat;
-	background-size: cover;
-	line-height: 30px;
-	padding: 2px 10px 2px 10px;
-	margin: 7px 1px 7px 1px;
-}
 
-.mainmu:hover {
-	background: url(../icon/menu2.fw.png) center no-repeat;
-	background-size: cover;
-}
-
-.mainmu2 {
-	position: relative;
-	border-radius: 10px;
-	background: url(../icon/menu3.fw.png)center no-repeat;
-	background-size: 100% 100%;
-	line-height: 30px;
-	padding: 2px 10px 2px 10px;
-	margin: 7px 1px 7px 1px;
-}
-
-.mainmu2:hover {
-	background: url(../icon/menu4.fw.png) center no-repeat;
-	background-size: cover;
-}
 
 #lf {
 	height: 540px;
@@ -261,6 +233,9 @@ button:focus {
 	border-bottom: 1px solid rgb(161, 156, 156);
 	padding-bottom: 15px;
 }
+h2.title-border{
+	padding: 0px 0px 10px 5px;
+}
 
 .logo {
 	width: 44px;
@@ -273,6 +248,7 @@ button:focus {
 	border: 1px solid #eaeaea;
 	padding: 20px 0 50px;
 	border-top: 0;
+	border-left: 0;
 }
 
 .btn-login {
@@ -562,17 +538,87 @@ button:focus {
 
 /* 媒體查詢700px */
 @media only screen and (max-width: 700px) {
-	.items {
-		height: auto;
-		width: 90px;
-		border-radius: 10%;
-		/* background-color: antiquewhite; */
-		position: relative;
-		top: 0;
-		left: -29px;
+	#container{
+		padding: 0;
+	}
+	.menu {
+		border: 0;
+		padding: 0px 0 35px;
+		border-top: 0;
+	}
+	.event-banner-box li {
+		overflow: hidden;
+		float: left;
+		width: 490px;
+		height: 38px;
+		margin-bottom: 0px;
+
+	}
+	.event-banner-box .inner {
+		margin-bottom: 0px;
+	}
+	.inner {
+		margin-bottom: 0px;
+	}
+	.p-4 {
+		padding: 0.5rem !important;
 	}
 }
 /* 媒體查詢700px----------------------------end */
+
+
+.menu-items {
+	display: flex;
+	flex-direction: column;
+	/* 預設垂直排列 */
+	padding: 0;
+	list-style: none;
+	align-items: center;
+	/* 桌面版項目置中 */
+}
+
+.items {
+	text-align: center;
+	/* 圖片置中 */
+	width: 100%;
+	/* 確保每個項目佔滿容器寬度 */
+	max-width: 300px;
+	/* 桌面版最大寬度，可調整 */
+}
+
+/* 手機版 (460px 以下) */
+@media (max-width: 460px) {
+	.menu-items {
+		flex-direction: column;
+		/* 保持垂直排列 */
+		align-items: center;
+		/* 項目置中 */
+	}
+
+	.items {
+		width: 100%;
+		/* 手機版佔滿寬度 */
+		max-width: none;
+		/* 移除最大寬度限制 */
+		margin-top: 0;
+		/* 移除 mt-4 */
+		padding: 10px 0;
+		/* 上下間距，可調整 */
+	}
+
+	.menu {
+		width: 100%;
+		/* 選單佔滿寬度 */
+	}
+
+	.items img {
+		width: 80%;
+		/* 圖片佔滿項目寬度 */
+		height: auto;
+		/* 保持圖片比例 */
+	}
+}
+
 
 /* 切換按鈕(滑塊) */
 
