@@ -537,36 +537,6 @@ h2.title-border,div.title-border{
 
 /* =========================右下回到頂端箭頭 end =========================== */
 
-/* 媒體查詢700px */
-@media only screen and (max-width: 700px) {
-	#container{
-		padding: 0;
-	}
-	.menu {
-		border: 0;
-		padding: 0px 0 35px;
-		border-top: 0;
-	}
-	.event-banner-box li {
-		overflow: hidden;
-		float: left;
-		width: 490px;
-		height: 38px;
-		margin-bottom: 0px;
-
-	}
-	.event-banner-box .inner {
-		margin-bottom: 0px;
-	}
-	.inner {
-		margin-bottom: 0px;
-	}
-	.p-4 {
-		padding: 0.5rem !important;
-	}
-}
-/* 媒體查詢700px----------------------------end */
-
 
 .menu-items {
 	display: flex;
@@ -587,101 +557,6 @@ h2.title-border,div.title-border{
 	/* 桌面版最大寬度，可調整 */
 }
 
-/* 手機版 (460px 以下) */
-@media (max-width: 460px) {
-	.menu-items {
-		flex-direction: column;
-		/* 保持垂直排列 */
-		align-items: center;
-		/* 項目置中 */
-	}
-
-	.items {
-		width: 100%;
-		/* 手機版佔滿寬度 */
-		max-width: none;
-		/* 移除最大寬度限制 */
-		margin-top: 0;
-		/* 移除 mt-4 */
-		padding: 10px 0;
-		/* 上下間距，可調整 */
-	}
-
-	.menu {
-		width: 100%;
-		/* 選單佔滿寬度 */
-	}
-
-	.items img {
-		width: 80%;
-		/* 圖片佔滿項目寬度 */
-		height: auto;
-		/* 保持圖片比例 */
-	}
-	#introduction-title {
-
-		font-size: 24px;
-	}
-}
-
-
-/* 切換按鈕(滑塊) */
-
-.toggle-switch {
-    position: relative;
-    width: 160px;
-    height: 48px;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    border: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.slider .option {
-    flex: 1;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    z-index: 1;
-}
-
-.slider .option.active {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.slider::before {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    top: 0;
-    left: 0;
-    border-radius: 24px;
-    transition: transform 0.3s ease;
-    backdrop-filter: blur(2px);
-}
-
-.slider[data-active="true"]::before {
-    transform: translateX(100%);
-}
-
 .form-container {
     max-width: 400px;
     margin: 0 auto;
@@ -696,3 +571,88 @@ h2.title-border,div.title-border{
     display: block;
 }
 
+/* ===================================前台學生介紹================ */
+/* ===================================前台學生介紹================ */
+.int-a {
+	color: black;
+	font-weight: bold;
+}
+
+.int-th {
+	font-size: 22px;
+}
+
+.int-back {
+	display: flex;
+	/* justify-content: space-evenly; */
+	/* width: 200px; */
+}
+
+.int-back .img-fluid {
+	width: 270px;
+}
+
+.int-societies {
+	font-size: 20px;
+	vertical-align: middle;
+
+}
+
+.int-items {
+	display: flex;
+	justify-content: space-evenly;
+
+}
+
+.box {
+	min-width: 100px;
+	min-height: 100px;
+	padding-left: 13px;
+	/* background-color: skyblue; */
+}
+
+.int-col {
+
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.int-img {
+	width: 720px;
+	height: 960px;
+}
+
+.int-flex {
+	display: flex;
+}
+
+.int-title {
+	padding: 0px 0px 10px 5px;
+	border-bottom: 1px solid rgb(161, 156, 156);
+	margin-top: 10px;
+
+}
+
+.pre-like {
+	white-space: pre;
+	/* 模擬 <pre> 的空白保留 */
+	font-family: monospace;
+	/* 模擬 <pre> 的字體 */
+	/* margin: 1em 0;
+	padding: 1em; */
+}
+
+.int-footer-logo {
+	width: 135px;
+	/* 縮小圖片，避免佔滿空間 */
+	height: 135px;
+	margin-top: 0px;
+}
+.int-title-logo{
+	width: 150px;
+
+}
+/* 前台學生介紹完======================== */
+/* 前台學生介紹完======================== */

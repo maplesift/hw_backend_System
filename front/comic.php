@@ -57,7 +57,7 @@
             <?php
             if (($now - 1) > 0) {
                 $prev = $now - 1;
-                echo "<a href='?do=$do&p=$prev#comic-title'> <i class='bi bi-arrow-left-square'></i> </a>";
+                echo "<a href='?do=$do&p=$prev#comic-title'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
             }
 
             for ($i = 1; $i <= $pages; $i++) {
@@ -69,27 +69,27 @@
             }
             if (($now + 1) <= $pages) {
                 $next = $now + 1;
-                echo "<a href='?do=$do&p=$next#comic-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                echo "<a href='?do=$do&p=$next#comic-title'> <i class='bi bi-arrow-right-square fs-4'> </i> </a>";
             }
             ?>
         </div>
-
-        <!--event-banner-box  -->
-        <div class="event-banner-box">
-            <div class="inner">
-            </div>
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/@bluearchive_tw" target="_blank" rel="noopener noreferrer">
-                        <img src="./icon/04820x197.jpg" alt="" class="img-fluid ">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/TW.BlueArchive/" target="_blank" rel="noopener noreferrer">
-                        <img src="./icon/05820x197.jpg" alt="" class="img-fluid ">
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
+    <!--event-banner-box  -->
+    <div class="event-banner-box p-4">
+        <div class="inner">
+        </div>
+        <ul>
+            <li>
+                <a href="https://www.youtube.com/@bluearchive_tw" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon/04820x197.jpg" alt="" class="img-fluid ">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/TW.BlueArchive/" target="_blank" rel="noopener noreferrer">
+                    <img src="./icon/05820x197.jpg" alt="" class="img-fluid ">
+                </a>
+            </li>
+        </ul>
+    </div>
+
 </div>

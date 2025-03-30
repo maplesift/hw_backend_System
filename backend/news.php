@@ -41,7 +41,7 @@
                     <td width="200px">
                         <!-- onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do?>&#39;)" -->
                         <!-- include to admin.php -->
-                        <input type="button" onclick="op('#cover','#cvr','./modal/<?=$do;?>.php?table=<?=$do?>')"
+                        <input type="button" onclick="op('#modal','#cvr','./modal/<?=$do;?>.php?table=<?=$do?>')"
                             value="新增文字" class="btn btn-success">
                     </td>
                     <td class="cent">

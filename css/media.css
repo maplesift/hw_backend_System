@@ -1,0 +1,141 @@
+/* 媒體查詢700px */
+@media only screen and (max-width: 700px) {
+    #container {
+        padding: 0;
+    }
+
+    .menu {
+        border: 0;
+        padding: 0px 0 35px;
+        border-top: 0;
+    }
+
+    .event-banner-box li {
+        overflow: hidden;
+        float: left;
+        width: 490px;
+        height: 38px;
+        margin-bottom: 0px;
+
+    }
+
+    .event-banner-box .inner {
+        margin-bottom: 0px;
+    }
+
+    .inner {
+        margin-bottom: 0px;
+    }
+
+    .p-4 {
+        padding: 0.5rem !important;
+    }
+
+    /* 手機版 */
+    th.int-th:nth-child(4),
+    /* 隱藏「部活」標題 */
+    td.int-societies {
+        /* 隱藏「部活」內容 */
+        display: none;
+    }
+
+    .int-back .img-fluid {
+        width: 190px;
+    }
+
+
+    .int-flex {
+        display: block;
+    }
+
+    .int-img {
+        padding: 4px;
+        height: 551px;
+    }
+
+    .int-text {
+        font-size: 16px;
+        /* 手機版字體大小 */
+        overflow: visible;
+        /* 顯示完整內容 */
+        overflow-wrap: break-word;
+        /* 單詞太長時換行 */
+        word-break: break-all;
+        /* 強制在任意字符處換行，適合中文 */
+        max-width: 92%;
+        /* 限制寬度不超出容器 */
+        white-space: pre-line;
+    }
+
+    .int-col {
+        height: 277px;
+        display: block;
+    }
+
+    .int-title {
+        margin-top: 0px;
+        padding: 0px 0px 10px 7px;
+    }
+
+    .int-footer-logo {
+        width: 80px;
+        /* 縮小圖片，避免佔滿空間 */
+        height: 80px;
+        margin: 10px 0;
+    }
+
+    .box-none {
+        display: none;
+    }
+
+    .pre-like {
+        white-space: normal;
+        /* 手機版取消空白保留 */
+        font-family: inherit;
+        /* 取消固定字體 */
+        margin: 10px 0;
+        padding: 0;
+    }
+}
+
+/* 媒體查詢700px----------------------------end */
+
+/* 手機版 (460px 以下) */
+@media (max-width: 460px) {
+    .menu-items {
+        flex-direction: column;
+        /* 保持垂直排列 */
+        align-items: center;
+        /* 項目置中 */
+    }
+
+    .items {
+        width: 100%;
+        /* 手機版佔滿寬度 */
+        max-width: none;
+        /* 移除最大寬度限制 */
+        margin-top: 0;
+        /* 移除 mt-4 */
+        padding: 10px 0;
+        /* 上下間距，可調整 */
+    }
+
+    .menu {
+        width: 100%;
+        /* 選單佔滿寬度 */
+    }
+
+    .items img {
+        width: 80%;
+        /* 圖片佔滿項目寬度 */
+        height: auto;
+        /* 保持圖片比例 */
+    }
+
+    #introduction-title {
+
+        font-size: 24px;
+    }
+}
+
+/* 手機版 (460px 以下) ================end */

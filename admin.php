@@ -20,6 +20,8 @@ if(!isset($_SESSION['user'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- 自己 -->
+    <link href="./css/media.css" rel="stylesheet" type="text/css">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./icon/00SD.gif" sizes="32x32" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +91,7 @@ if(!isset($_SESSION['user'])){
 
             <div class="col-1  "></div>
             <!-- menu -->
-            <div class="col-2 menu">
+            <div class="col-11 col-sm-2  menu">
 
                 <ul>
                     <div class="items-back mt-2">
@@ -125,6 +127,11 @@ if(!isset($_SESSION['user'])){
                     <div class="items-back mt-2">
                         <a href="?do=total" class="highlight-hover del-underline">
                             進站總人數管理
+                        </a>
+                    </div>
+                    <div class="items-back mt-2">
+                        <a href="?do=log" class="highlight-hover del-underline">
+                            網站更新履歷
                         </a>
                     </div>
                 </ul>

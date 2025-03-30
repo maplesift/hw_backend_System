@@ -24,7 +24,8 @@
         <!-- 為黃字框 -->
         <!-- <div id="altt" style="">
         </div> -->
-        <div class="event-banner-box">
+        </div>
+        <div class="event-banner-box p-4">
             <div class="inner">
             </div>
             <ul>
@@ -37,9 +38,9 @@
                     <a href="https://www.facebook.com/TW.BlueArchive/" target="_blank" rel="noopener noreferrer">
                         <img src="./icon/05820x197.jpg" alt="" class="img-fluid ">
                     </a>
+
                 </li>
             </ul>
         </div>
 
-    </div>
 </div>

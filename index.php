@@ -15,7 +15,9 @@ include_once "api/db.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <link href="./css/media.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="./icon/00SD.gif" sizes="32x32" type="image/png">
     <!-- 字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +29,6 @@ include_once "api/db.php";
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
-
-
     <script src="./js/js.js"></script>
 
     <style>

@@ -1,10 +1,10 @@
-<h3 class="cent">新增動畫圖片</h3>
+<h3 class="cent">新增履歷</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
-            <td>動畫圖片：</td>
-            <td><input type="file" name="img" id="img"></td>
+            <td>內容</td>
+            <td><input type="text" name="text" id="text"></td>
         </tr>
 
     </table>

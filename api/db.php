@@ -179,6 +179,7 @@ $Comic=new DB('comics');
 $Admin=new DB('admin');
 $Total=new DB('total');
 $Bottom=new DB('bottom');
+$Log=new DB('logs');
 
 
 if(!isset($_SESSION['total'])){

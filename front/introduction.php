@@ -1,140 +1,7 @@
     <style>
-        .int-a {
-            color: black;
-            font-weight: bold;
-        }
 
 
-
-        .int-th {
-            font-size: 22px;
-        }
-
-        .int-back {
-            display: flex;
-            /* justify-content: space-evenly; */
-            /* width: 200px; */
-        }
-
-        .int-back .img-fluid {
-            width: 250px;
-        }
-
-        .int-societies {
-            font-size: 20px;
-            vertical-align: middle;
-
-        }
-
-        .int-items {
-            display: flex;
-            justify-content: space-evenly;
-
-        }
-
-
-
-        .box {
-            min-width: 100px;
-            min-height: 100px;
-            padding-left: 13px;
-            /* background-color: skyblue; */
-        }
-
-        .int-col {
-
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-
-        .int-img {
-            width: 720px;
-            height: 960px;
-        }
-
-        .int-flex {
-            display: flex;
-        }
-
-        .int-title {
-            padding: 0px 0px 10px 5px;
-            border-bottom: 1px solid rgb(161, 156, 156);
-            margin-top: 10px;
-
-        }
-
-        .pre-like {
-            white-space: pre;
-            /* 模擬 <pre> 的空白保留 */
-            font-family: monospace;
-            /* 模擬 <pre> 的字體 */
-            margin: 1em 0;
-            padding: 1em;
-        }
-
-        @media (max-width: 768px) {
-
-            /* 手機版 */
-            th.int-th:nth-child(4),
-            /* 隱藏「部活」標題 */
-            td.int-societies {
-                /* 隱藏「部活」內容 */
-                display: none;
-            }
-
-            .int-flex {
-                display: block;
-            }
-
-            .int-img {
-                padding: 4px;
-                height: 551px;
-            }
-
-            .int-text {
-                font-size: 16px;
-                /* 手機版字體大小 */
-                overflow: visible;
-                /* 顯示完整內容 */
-                overflow-wrap: break-word;
-                /* 單詞太長時換行 */
-                word-break: break-all;
-                /* 強制在任意字符處換行，適合中文 */
-                max-width: 92%;
-                /* 限制寬度不超出容器 */
-                white-space: pre-line;
-            }
-
-            .int-col {
-
-                height: 277px;
-                display: block;
-            }
-
-            .int-title {
-                margin-top: 0px;
-                padding: 0px 0px 10px 7px;
-
-            }
-
-            .box-none {
-                display: none;
-            }
-
-            .pre-like {
-                white-space: normal;
-                /* 手機版取消空白保留 */
-                font-family: inherit;
-                /* 取消固定字體 */
-                margin: 10px 0;
-                padding: 0;
-            }
-
-        }
     </style>
-
     <?php
     // 取得所有頁面的 id 和標題
     // 分頁
@@ -146,13 +13,10 @@
     // $i=0;
     // 空格很重要
     $rows = $Introduction->all(['sh' => 1], " limit $start,$div");
-
-
     ?>
     <style>
     </style>
     <div class="col-12 inner col-sm-8">
-
         <?php if (!isset($_GET['id'])): // 如果沒有選擇頁面，則顯示主頁連結 
         ?>
             <div class="title title-border "><a href="?do=<?= $do; ?>&p=<?= $now; ?>#introduction-title" class="int-a"
@@ -160,7 +24,6 @@
             </div>
             <!-- <hr> -->
             <div class="p-4 int">
-
                 <!-- 分頁 -->
                 <div class="cent">
                     <?php
@@ -182,7 +45,6 @@
                     }
                     ?>
                 </div>
-
                 <table class="table">
                     <tbody>
                         <tr>
@@ -198,8 +60,7 @@
                                     <!-- 動態生成logo -->
                                     <div class="int-logo-div">
                                         <a href="?do=<?= $do; ?>&id=<?= $row['id'] ?>&p=<?= $now ?>#introduction-title">
-                                            <img src="./upload/<?= $row['logo']; ?>" class="img-fluid mt-4 int-logo int-radius"
-                                                style="width:150px;height:150px;">
+                                            <img src="./upload/<?= $row['logo']; ?>" class="img-fluid mt-4 int-logo int-title-logo int-radius">
                                         </a>
                                     </div>
                                 </td>
@@ -209,8 +70,7 @@
                                 </td>
                                 <!-- 學員 -->
                                 <td width="8%" class="int-name">
-                                    <img src="./icon/<?= $row['schools']; ?>.png" class="img-fluid mt-4 "
-                                        style="width:150px;height:150px;">
+                                    <img src="./icon/<?= $row['schools']; ?>.png" class="img-fluid mt-4 int-title-logo">
                                 </td>
                                 <!-- 部活 -->
                                 <td width="8%" class="int-societies">
@@ -220,13 +80,12 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
                 <!-- 分頁 -->
                 <div class="cent">
                     <?php
                     if (($now - 1) > 0) {
                         $prev = $now - 1;
-                        echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square'></i> </a>";
+                        echo "<a href='?do=$do&p=$prev#introduction-title'> <i class='bi bi-arrow-left-square fs-4'></i> </a>";
                     }
 
                     for ($i = 1; $i <= $pages; $i++) {
@@ -238,15 +97,13 @@
                     }
                     if (($now + 1) <= $pages) {
                         $next = $now + 1;
-                        echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square'> </i> </a>";
+                        echo "<a href='?do=$do&p=$next#introduction-title'> <i class='bi bi-arrow-right-square fs-4'> </i> </a>";
                     }
                     ?>
                 </div>
             </div>
-
         <?php endif; ?>
         <!-- =================單獨學生介紹========================= -->
-
         <?php
         // 讀取選取的頁面內容
         if (isset($_GET['id'])) :
@@ -296,13 +153,12 @@
                 <div class="pre-like">
                     <div class='int-text int-title'><?= $stmt['text']; ?></div>
                 </div>
-                <!-- footer 回上一頁 ,左右可選跳至上下學生(id) -->
+                <!--  回上一頁 ,左右可選跳至上下學生(id) -->
                 <div class='int-items'>
                     <div>
                         <?php if (isset($prevId['id'])): ?>
                             <a href="?do=<?= $do; ?>&id=<?= $prevId['id']; ?>#introduction-title">
-                                <img src="./upload/<?= $prevId['logo'] ?>" class='img-fluid mt-4 int-logo int-radius'
-                                    style='width:120px;height:120px;'>
+                                <img src="./upload/<?= $prevId['logo'] ?>" class='img-fluid int-logo int-footer-logo int-radius'>
                             </a>
                         <?php endif; ?>
                     </div>
@@ -314,19 +170,15 @@
                     <div>
                         <?php if (isset($nextId['id'])): ?>
                             <a href="?do=<?= $do ?>&id=<?= $nextId['id']; ?>#introduction-title">
-                                <img src="./upload/<?= $nextId['logo']; ?>" class='img-fluid mt-4 int-logo int-radius'
-                                    style='width:120px;height:120px;'>
+                                <img src="./upload/<?= $nextId['logo']; ?>" class='img-fluid int-logo int-footer-logo int-radius'>
                             </a>
                         <?php endif; ?>
                     </div>
                 </div>
-                <!--   footer end -->
+                <!--   回上一頁 ,左右可選跳至上下學生(id) end -->
             <?php else:
                 echo "<p>找不到此頁面。</p>";
-
             ?>
-
-
             <?php endif; ?>
         <?php endif; ?>
         <!--event-banner-box  -->

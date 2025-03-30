@@ -2,7 +2,7 @@
 <style>
 
 </style>
-<div class="col-6 ">
+<div class="col-11 col-sm-6 ">
     <h2 class="title-border title">標題圖片管理</h2>
     <!-- <hr> -->
     <form method="post" action="./api/edit.php">
@@ -24,7 +24,6 @@
                     
             ?>
                 <tr>
-
                     <td width="30%">
                         <img src="./upload/<?=$row['img'];?>" class="img-fluid mt-2" style="width:275px;height:37px;">
                     </td>

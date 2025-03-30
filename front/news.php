@@ -52,7 +52,8 @@
                 }
                 ?>
         </div>
-        <div class="event-banner-box">
+        </div>
+        <div class="event-banner-box p-4">
             <div class="inner">
             </div>
             <ul>
@@ -70,5 +71,5 @@
         </div>
 
 
-    </div>
+
 </div>
