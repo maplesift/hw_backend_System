@@ -354,6 +354,7 @@ h2.title-border,div.title-border{
 .int-text {
 	font-size: 20px;
 	overflow: hidden;
+	white-space: pre-line;
 	/* border-bottom: 1px solid #c3c3c3; */
 }
 

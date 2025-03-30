@@ -58,8 +58,9 @@
                     </td>
                     <!-- 介紹 -->
                     <td width="10%">
-                        <textarea name="text[]" style="width:230px;height:100px;" class="form-control ms-3"><?=$row['text'];?>
-                        </textarea>
+                        <textarea name="text[]" 
+                        style="width:230px;height:100px;" 
+                        class="form-control ms-3"><?=$row['text'];?></textarea>
                     </td>
                     <!-- 顯示 -->
                     <td width="5%">
